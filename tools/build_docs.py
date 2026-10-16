@@ -28,12 +28,14 @@ HEAD = """<!doctype html>
   <meta property="og:image" content="https://www.undeify.com/assets/og-image.png">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
-  <meta property="og:image:alt" content="Undeify: our own software, built in Nigeria">
+  <meta property="og:image:alt" content="The Undeify logo, a copper U holding a white dot, above the words Building what’s next.">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="{title} | Undeify">
   <meta name="twitter:description" content="{desc}">
   <meta name="twitter:image" content="https://www.undeify.com/assets/og-image.png">
-  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <link rel="icon" href="favicon.ico" sizes="48x48">
+  <link rel="icon" href="assets/favicon-32.png" type="image/png" sizes="32x32">
+  <link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
   <link rel="manifest" href="site.webmanifest">
   <link rel="stylesheet" href="assets/site.css">
 </head>
