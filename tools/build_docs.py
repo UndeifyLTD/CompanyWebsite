@@ -18,7 +18,23 @@ HEAD = """<!doctype html>
   <title>{title} | Undeify</title>
   <meta name="description" content="{desc}">
   <meta name="theme-color" content="#fafafa">
+  <link rel="canonical" href="https://www.undeify.com/{name}">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Undeify">
+  <meta property="og:locale" content="en_NG">
+  <meta property="og:url" content="https://www.undeify.com/{name}">
+  <meta property="og:title" content="{title} | Undeify">
+  <meta property="og:description" content="{desc}">
+  <meta property="og:image" content="https://www.undeify.com/assets/og-image.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Undeify: our own software, built in Nigeria">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="{title} | Undeify">
+  <meta name="twitter:description" content="{desc}">
+  <meta name="twitter:image" content="https://www.undeify.com/assets/og-image.png">
   <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <link rel="manifest" href="site.webmanifest">
   <link rel="stylesheet" href="assets/site.css">
 </head>
 <body>
@@ -116,12 +132,12 @@ ABOUT = """
 """
 
 PAGES = {
-    "about.html": ("About Undeify", "Who Undeify is, how we work and what we are building.", ABOUT),
+    "about.html": ("About Undeify", "Who Undeify is, how we work and what we are building: our own software, designed, built and run in Nigeria.", ABOUT),
     "privacy.html": ("Privacy notice", "How the Undeify website handles personal data under the Nigeria Data Protection Act 2023.", PRIVACY),
     "terms.html": ("Terms of use", "The terms for using the Undeify website.", TERMS),
     "security.html": ("Security", "How to report a security problem in an Undeify website or product.", SECURITY),
 }
 
 for name, (title, desc, body) in PAGES.items():
-    (SITE / name).write_text(HEAD.format(title=title, desc=desc, updated=UPDATED, body=body.rstrip()), encoding="utf-8", newline="\n")
+    (SITE / name).write_text(HEAD.format(name=name, title=title, desc=desc, updated=UPDATED, body=body.rstrip()), encoding="utf-8", newline="\n")
     print("wrote", name)

@@ -1,0 +1,12 @@
+{
+  "name": "Undeify",
+  "short_name": "Undeify",
+  "description": "Our own software, built in Nigeria.",
+  "start_url": "/",
+  "display": "browser",
+  "background_color": "#fafafa",
+  "theme_color": "#fafafa",
+  "icons": [
+    { "src": "/assets/favicon.svg", "sizes": "any", "type": "image/svg+xml" }
+  ]
+}
