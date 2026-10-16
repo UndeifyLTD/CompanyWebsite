@@ -51,6 +51,7 @@ HEAD = """<!doctype html>
 """ + block("footer").replace("{", "{{").replace("}", "}}") + """
 </div>
 <script src="assets/site.js" defer></script>
+<script src="assets/consent.js" defer></script>
 </body>
 </html>
 """
@@ -60,17 +61,23 @@ PRIVACY = """
     <h2>Who we are</h2>
     <p>Undeify is a software company in Nigeria. We are completing our registration with the Corporate Affairs Commission, and our registered name and number will be added here when it is done. For anything about your data, write to <a class="link" href="mailto:hello@undeify.com?subject=Privacy">hello@undeify.com</a>.</p>
     <h2>What this website collects</h2>
-    <p>Very little. This website has no forms, no accounts, no cookies, no analytics and no advertising or tracking scripts. Our fonts and images are served from our own site, not from third parties.</p>
+    <p>Only what is listed here. This website has no forms, no accounts and no advertising. Our fonts and images are served from our own site.</p>
     <ul>
-      <li><b>Server logs.</b> Our hosting provider, Cloudflare, receives the technical details every website receives: your IP address, browser type and the pages requested. Cloudflare uses them to deliver the site and protect it from attacks. We do not use them to identify or profile visitors.</li>
+      <li><b>Analytics, only if you agree.</b> If you choose Accept, we use Google Analytics to count visits and see which pages are read. Details are below.</li>
+      <li><b>Server logs.</b> Our hosting provider, Vercel, receives the technical details every website receives: your IP address, browser type and the pages requested. Vercel uses them to deliver the site and protect it from attacks. We do not use them to identify or profile visitors.</li>
+      <li><b>Your cookie choice.</b> Your browser remembers whether you accepted or declined, so we do not ask on every page. It is stored only on your device and is never sent to us.</li>
       <li><b>Emails you send us.</b> If you write to us, we receive your email address, your name if you include it, and your message. We use them only to reply and to keep a record of the conversation.</li>
     </ul>
+    <h2 id="analytics">Analytics cookies</h2>
+    <p>On your first visit we ask whether we may use Google Analytics. Nothing from Google loads until you choose Accept, and if you decline, nothing from Google loads at all.</p>
+    <p>If you accept, Google Analytics sets two cookies, <code>_ga</code> and <code>_ga_YMEL5ZY0SJ</code>, which last up to 13 months. It records the pages you view, how you arrived at the site, your device and browser type, and your approximate location (country and city), which Google works out from your IP address. Google Analytics does not store your IP address. We have turned off Google signals and advertising features, so this data is not used to show you ads or linked to your Google account. Google processes this data for us, as our service provider.</p>
+    <p>You can change your mind at any time with <b>Cookie settings</b> at the bottom of every page. If you decline after accepting, we stop Google Analytics and delete its cookies from your browser.</p>
     <h2>Why we may use it</h2>
-    <p>We rely on our legitimate interest in running a secure website for server logs, and on your request for emails you send us. We never sell personal data, and we do not use it for marketing unless you have asked us to.</p>
+    <p>We use analytics only with your consent, which you can withdraw at any time. We rely on our legitimate interest in running a secure website for server logs, and on your request for emails you send us. We never sell personal data, and we do not use it for marketing unless you have asked us to.</p>
     <h2>How long we keep it</h2>
-    <p>Hosting logs are kept by Cloudflare for the short period its service needs. We keep emails for as long as the conversation is active and for up to two years afterwards, then delete them, unless the law requires us to keep them longer.</p>
+    <p>Google keeps detailed analytics data for 2 months; after that only totals remain, which do not identify anyone. Hosting logs are kept by Vercel for the short period its service needs. We keep emails for as long as the conversation is active and for up to two years afterwards, then delete them, unless the law requires us to keep them longer.</p>
     <h2>Where it is processed</h2>
-    <p>Cloudflare and our email provider may process data outside Nigeria. Where that happens, we rely on the safeguards the Nigeria Data Protection Act 2023 allows for transfers abroad.</p>
+    <p>Google, Vercel and our email provider may process data outside Nigeria, including in the United States. Where that happens, we rely on the safeguards the Nigeria Data Protection Act 2023 allows for transfers abroad.</p>
     <h2>Your rights</h2>
     <p>Under the Nigeria Data Protection Act 2023 you can ask us to tell you what personal data we hold about you, to correct it, to delete it, to stop or limit how we use it, and to give you a copy. Write to <a class="link" href="mailto:hello@undeify.com?subject=Data%20request">hello@undeify.com</a> and we will answer within 30 days. If you are not satisfied with our answer, you can complain to the Nigeria Data Protection Commission.</p>
     <h2>Changes</h2>
@@ -136,7 +143,7 @@ ABOUT = """
 
 PAGES = {
     "about.html": ("About Undeify", "Who Undeify is, how we work and what we are building: our own software, designed, built and run in Nigeria.", ABOUT),
-    "privacy.html": ("Privacy notice", "How the Undeify website handles personal data under the Nigeria Data Protection Act 2023.", PRIVACY),
+    "privacy.html": ("Privacy notice", "How the Undeify website handles personal data, including opt-in Google Analytics, under the Nigeria Data Protection Act 2023.", PRIVACY),
     "terms.html": ("Terms of use", "The terms for using the Undeify website.", TERMS),
     "security.html": ("Security", "How to report a security problem in an Undeify website or product.", SECURITY),
 }

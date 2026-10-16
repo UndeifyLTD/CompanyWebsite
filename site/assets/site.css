@@ -321,3 +321,14 @@ a.tile:hover { background: var(--surface); }
   .win__split .rota { margin: 10px; }
   .win__search { display: none; }
 }
+
+/* Analytics consent: a small card, bottom left, until the visitor chooses */
+.consent { position: fixed; z-index: 40; left: 16px; bottom: 16px; max-width: 400px; padding: 16px; display: flex; flex-direction: column; gap: 12px; background: var(--surface); color: var(--ink); border-radius: 12px; box-shadow: 0 0 0 1px var(--line), 0 8px 30px rgba(0, 0, 0, 0.08); font-size: 14px; line-height: 21px; }
+.consent__text .link { text-decoration: underline; text-underline-offset: 2px; }
+.consent__actions { display: flex; justify-content: flex-end; gap: 8px; }
+.footer li button { font: inherit; color: var(--ink-2); background: none; border: 0; padding: 0; cursor: pointer; transition: color 150ms ease; }
+.footer li button:hover { color: var(--ink); }
+@media (max-width: 520px) {
+  .consent { left: 12px; right: 12px; bottom: 12px; max-width: none; }
+  .consent__actions .btn { flex: 1; }
+}
