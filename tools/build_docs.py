@@ -24,9 +24,9 @@ HEAD = """<!doctype html>
 <body>
 <div class="page">
 """ + block("header").replace("{", "{{").replace("}", "}}") + """
-  <main class="doc__main wrap" id="main">
+  <main class="doc wrap" id="main">
     <h1>{title}</h1>
-    <p class="updated label">Last updated {updated}</p>
+    <p class="updated">Last updated {updated}</p>
 {body}
   </main>
 """ + block("footer").replace("{", "{{").replace("}", "}}") + """
@@ -93,7 +93,30 @@ SECURITY = """
     <p>We will not take legal action against anyone who reports a problem in good faith and follows the guidance on this page. Our security contact is also published in <a class="link" href=".well-known/security.txt">security.txt</a>.</p>
 """
 
+ABOUT = """
+    <p class="lede"><strong>Undeify is a product company, not an agency.</strong> We pick problems we understand, build software for them, and stay to run and improve it long after launch.</p>
+    <h2>Who we are</h2>
+    <p>Undeify was started by Isaac and Tolu, who design, build and support everything themselves. Isaac leads the company and its security; Tolu leads development. The people who wrote the code are the people who answer your email.</p>
+    <p>We are completing our registration with the Corporate Affairs Commission. Our registered name and number will appear on this page once it is done.</p>
+    <h2>How we work</h2>
+    <ul>
+      <li><b>Our own products.</b> We do not build websites or apps for clients. Everything we make carries our name, so we decide what goes in, what stays out, and when it is ready.</li>
+      <li><b>Security from the start.</b> We ask how each feature could be abused before we build it. Secrets stay out of our code, and every service gets only the access it needs.</li>
+      <li><b>Built for Nigerian law.</b> We design every product around the Nigeria Data Protection Act 2023: collect only what a feature needs, say plainly why, and keep it no longer than necessary.</li>
+    </ul>
+    <h2>What we are building</h2>
+    <ul>
+      <li><b>NOW</b>, a social map of places, starting with a private beta in Lagos. In design.</li>
+      <li><b>ShiftOS</b>, scheduling and operations for teams that work in shifts. Running in production.</li>
+    </ul>
+    <h2 id="research">In research</h2>
+    <p>We are researching an app for learning Yorùbá, made for families who live abroad, starting with parents who want to learn it themselves. It is on hold while NOW comes first, and we will build it only once people tell us they need it.</p>
+    <h2>Contact</h2>
+    <p>Write to <a href="mailto:hello@undeify.com">hello@undeify.com</a>. A founder replies within two working days.</p>
+"""
+
 PAGES = {
+    "about.html": ("About Undeify", "Who Undeify is, how we work and what we are building.", ABOUT),
     "privacy.html": ("Privacy notice", "How the Undeify website handles personal data under the Nigeria Data Protection Act 2023.", PRIVACY),
     "terms.html": ("Terms of use", "The terms for using the Undeify website.", TERMS),
     "security.html": ("Security", "How to report a security problem in an Undeify website or product.", SECURITY),

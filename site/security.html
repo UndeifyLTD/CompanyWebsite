@@ -13,36 +13,49 @@
 <div class="page">
 <a class="skip" href="#main">Skip to content</a>
   <header class="header">
-    <div class="wrap">
+    <div class="header__in">
       <a class="brand" href="./" aria-label="Undeify, home">
         <svg viewBox="0 0 32 32" aria-hidden="true"><rect width="32" height="32" rx="7" fill="#171717"/><path d="M9.5 8h3.6v9.2c0 2.4 1.1 3.6 2.9 3.6s2.9-1.2 2.9-3.6V8h3.6v9.4c0 4.3-2.6 6.8-6.5 6.8s-6.5-2.5-6.5-6.8z" fill="#fff"/></svg>
         Undeify
       </a>
-      <nav class="nav__links" aria-label="Main">
-        <a href="./#now">NOW</a>
-        <a href="./#shiftos">ShiftOS</a>
-        <a href="./#about">About</a>
-        <a href="security.html">Security</a>
+      <nav class="nav" aria-label="Main">
+        <div class="nav__item">
+          <a class="nav__link" href="./#now" aria-haspopup="true">Products <svg viewBox="0 0 12 12" aria-hidden="true"><path d="M3 4.5 6 7.5l3-3" fill="none" stroke="currentColor" stroke-width="1.3"/></svg></a>
+          <div class="drop">
+            <p class="drop__title">Products</p>
+            <a href="./#now"><span class="ico"><svg viewBox="0 0 16 16" aria-hidden="true"><circle cx="8" cy="7" r="2.2" fill="none" stroke="#171717" stroke-width="1.3"/><path d="M8 14s4.5-4.2 4.5-7.2a4.5 4.5 0 0 0-9 0C3.5 9.8 8 14 8 14Z" fill="none" stroke="#171717" stroke-width="1.3"/></svg></span><b>NOW</b><span>A social map of places, starting in Lagos</span></a>
+            <a href="./#shiftos"><span class="ico"><svg viewBox="0 0 16 16" aria-hidden="true"><rect x="2" y="3" width="12" height="11" rx="2" fill="none" stroke="#171717" stroke-width="1.3"/><path d="M2 6.5h12M5.5 1.5v3M10.5 1.5v3" stroke="#171717" stroke-width="1.3"/></svg></span><b>ShiftOS</b><span>Scheduling and operations for shift teams</span></a>
+            <a href="about.html#research"><span class="ico"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M3 3.5h10M3 7h10M3 10.5h6" stroke="#171717" stroke-width="1.3"/></svg></span><b>In research</b><span>Learning Yorùbá, for families abroad</span></a>
+          </div>
+        </div>
+        <div class="nav__item">
+          <a class="nav__link" href="about.html" aria-haspopup="true">Company <svg viewBox="0 0 12 12" aria-hidden="true"><path d="M3 4.5 6 7.5l3-3" fill="none" stroke="currentColor" stroke-width="1.3"/></svg></a>
+          <div class="drop">
+            <p class="drop__title">Company</p>
+            <a href="about.html"><span class="ico"><svg viewBox="0 0 16 16" aria-hidden="true"><circle cx="8" cy="5.5" r="2.5" fill="none" stroke="#171717" stroke-width="1.3"/><path d="M3 14c.6-2.8 2.6-4.3 5-4.3s4.4 1.5 5 4.3" fill="none" stroke="#171717" stroke-width="1.3"/></svg></span><b>About</b><span>Who we are and how we work</span></a>
+            <a href="security.html"><span class="ico"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M8 1.8 13 3.6v4.1c0 3.1-2.1 5.4-5 6.5-2.9-1.1-5-3.4-5-6.5V3.6Z" fill="none" stroke="#171717" stroke-width="1.3"/></svg></span><b>Security</b><span>How to report a problem to us</span></a>
+            <a href="privacy.html"><span class="ico"><svg viewBox="0 0 16 16" aria-hidden="true"><rect x="3" y="7" width="10" height="7" rx="1.5" fill="none" stroke="#171717" stroke-width="1.3"/><path d="M5.5 7V5a2.5 2.5 0 0 1 5 0v2" fill="none" stroke="#171717" stroke-width="1.3"/></svg></span><b>Privacy</b><span>What this site collects: almost nothing</span></a>
+          </div>
+        </div>
+        <a class="nav__link" href="./#shipped">Shipped</a>
+        <a class="nav__link" href="mailto:hello@undeify.com">Contact</a>
       </nav>
       <div class="header__actions">
+        <a class="btn btn--light btn--sm" href="about.html">About</a>
         <a class="btn btn--light btn--sm" href="security.html">Report an issue</a>
         <a class="btn btn--dark btn--sm" href="mailto:hello@undeify.com?subject=Hello%20Undeify">Email us</a>
       </div>
-      <details class="menu">
-        <summary aria-label="Menu"><span></span></summary>
-        <nav class="menu__panel" aria-label="Menu">
-          <a href="./#now">NOW</a>
-          <a href="./#shiftos">ShiftOS</a>
-          <a href="./#about">About</a>
-          <a href="security.html">Security</a>
-          <a class="btn btn--dark" href="mailto:hello@undeify.com?subject=Hello%20Undeify">Email us</a>
-        </nav>
-      </details>
+      <button class="burger" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="mmenu"><i></i></button>
     </div>
   </header>
-  <main class="doc__main wrap" id="main">
+  <nav class="mmenu" id="mmenu" aria-label="Menu">
+    <div class="mmenu__group"><p>Products</p><a href="./#now">NOW</a><a href="./#shiftos">ShiftOS</a><a href="about.html#research">In research</a></div>
+    <div class="mmenu__group"><p>Company</p><a href="about.html">About</a><a href="security.html">Security</a><a href="privacy.html">Privacy</a><a href="./#shipped">Shipped</a></div>
+    <div class="mmenu__actions"><a class="btn btn--dark" href="mailto:hello@undeify.com?subject=Hello%20Undeify">Email us</a><a class="btn btn--light" href="security.html">Report an issue</a></div>
+  </nav>
+  <main class="doc wrap" id="main">
     <h1>Security</h1>
-    <p class="updated label">Last updated 16 October 2026</p>
+    <p class="updated">Last updated 16 October 2026</p>
 
     <p>Security is part of how we build every product. If you have found a weakness in this website or in any Undeify product, we want to hear about it.</p>
     <h2>How to report a problem</h2>
@@ -64,18 +77,16 @@
 <footer class="footer">
     <div class="wrap">
       <div class="footer__cols">
-        <div class="footer__brand">
-          <a class="brand" href="./" aria-label="Undeify, home"><svg viewBox="0 0 32 32" aria-hidden="true"><rect width="32" height="32" rx="7" fill="#171717"/><path d="M9.5 8h3.6v9.2c0 2.4 1.1 3.6 2.9 3.6s2.9-1.2 2.9-3.6V8h3.6v9.4c0 4.3-2.6 6.8-6.5 6.8s-6.5-2.5-6.5-6.8z" fill="#fff"/></svg>Undeify</a>
-          <p class="footer__blurb">Software products for businesses and everyday people, built in Nigeria.</p>
-        </div>
-        <nav aria-labelledby="f-products"><h2 id="f-products">Products</h2><ul><li><a href="./#now">NOW</a></li><li><a href="./#shiftos">ShiftOS</a></li></ul></nav>
-        <nav aria-labelledby="f-company"><h2 id="f-company">Company</h2><ul><li><a href="./#about">About</a></li><li><a href="./#how">How we build</a></li><li><a href="mailto:hello@undeify.com">Contact</a></li></ul></nav>
-        <nav aria-labelledby="f-legal"><h2 id="f-legal">Legal</h2><ul><li><a href="privacy.html">Privacy notice</a></li><li><a href="terms.html">Terms of use</a></li></ul></nav>
-        <nav aria-labelledby="f-security"><h2 id="f-security">Security</h2><ul><li><a href="security.html">Report a problem</a></li><li><a href=".well-known/security.txt">security.txt</a></li></ul></nav>
+        <nav aria-labelledby="f1"><h2 id="f1">Products</h2><ul><li><a href="./#now">NOW</a></li><li><a href="./#shiftos">ShiftOS</a></li><li><a href="about.html#research">In research</a></li></ul></nav>
+        <nav aria-labelledby="f2"><h2 id="f2">Company</h2><ul><li><a href="about.html">About</a></li><li><a href="./#shipped">Shipped</a></li><li><a href="mailto:hello@undeify.com">Contact</a></li></ul></nav>
+        <nav aria-labelledby="f3"><h2 id="f3">Security</h2><ul><li><a href="security.html">Report a problem</a></li><li><a href=".well-known/security.txt">security.txt</a></li><li><a href="./#security">How we build</a></li></ul></nav>
+        <nav aria-labelledby="f4"><h2 id="f4">Legal</h2><ul><li><a href="privacy.html">Privacy notice</a></li><li><a href="terms.html">Terms of use</a></li></ul></nav>
+        <div><h2>Contact</h2><ul><li><a href="mailto:hello@undeify.com">hello@undeify.com</a></li></ul></div>
+        <div><h2>Location</h2><ul><li><span>Nigeria</span></li></ul></div>
       </div>
       <div class="footer__bottom">
-        <span>© 2026 Undeify. Nigeria.</span>
-        <span>No cookies. No trackers.</span>
+        <a class="brand" href="./" aria-label="Undeify, home"><svg viewBox="0 0 32 32" aria-hidden="true"><rect width="32" height="32" rx="7" fill="#171717"/><path d="M9.5 8h3.6v9.2c0 2.4 1.1 3.6 2.9 3.6s2.9-1.2 2.9-3.6V8h3.6v9.4c0 4.3-2.6 6.8-6.5 6.8s-6.5-2.5-6.5-6.8z" fill="#fff"/></svg>Undeify</a>
+        <span>© 2026 Undeify. No cookies. No trackers.</span>
       </div>
     </div>
   </footer>

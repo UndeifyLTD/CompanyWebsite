@@ -1,32 +1,54 @@
-// Undeify website: the 3D product stack in the hero, and reveal-on-entry.
+// Undeify website: phone menu, the hanging crate in the hero, the typed line, copy-email, reveal-on-entry.
 (() => {
-  const stack = document.querySelector('.stack');
   const still = matchMedia('(prefers-reduced-motion: reduce)').matches;
 
-  if (stack && !still) {
-    // Scroll fans the panes apart as the hero leaves the screen.
-    let queued = false;
-    const spread = () => {
-      queued = false;
-      const r = stack.getBoundingClientRect();
-      const s = Math.min(1, Math.max(0, (innerHeight * 0.5 - r.top) / (r.height + innerHeight * 0.5)));
-      stack.style.setProperty('--spread', s.toFixed(3));
-    };
-    addEventListener('scroll', () => { if (!queued) { queued = true; requestAnimationFrame(spread); } }, { passive: true });
-    spread();
+  // Phone menu
+  const burger = document.querySelector('.burger');
+  const menu = document.getElementById('mmenu');
+  if (burger && menu) {
+    const set = (open) => { burger.setAttribute('aria-expanded', String(open)); burger.setAttribute('aria-label', open ? 'Close menu' : 'Open menu'); menu.classList.toggle('is-open', open); document.body.style.overflow = open ? 'hidden' : ''; };
+    burger.addEventListener('click', () => set(burger.getAttribute('aria-expanded') !== 'true'));
+    menu.addEventListener('click', (e) => { if (e.target.closest('a')) set(false); });
+    addEventListener('keydown', (e) => { if (e.key === 'Escape') set(false); });
+  }
 
-    // Desktop: the stack leans toward the pointer (the CSS transition smooths it).
+  // The crate is hoisted up out of view as the hero scrolls away, and leans toward the pointer on desktop.
+  const rig = document.querySelector('.rig');
+  if (rig && !still) {
+    let queued = false;
+    const lift = () => { queued = false; rig.style.setProperty('--lift', `${Math.round(-scrollY * 1.15)}px`); };
+    addEventListener('scroll', () => { if (!queued) { queued = true; requestAnimationFrame(lift); } }, { passive: true });
+    lift();
     if (matchMedia('(pointer: fine)').matches) {
       addEventListener('pointermove', (e) => {
-        stack.style.setProperty('--rx', ((e.clientX / innerWidth) * 2 - 1).toFixed(3));
-        stack.style.setProperty('--ry', ((e.clientY / innerHeight) * 2 - 1).toFixed(3));
+        rig.style.setProperty('--rx', ((e.clientX / innerWidth) * 2 - 1).toFixed(3));
+        rig.style.setProperty('--ry', ((e.clientY / innerHeight) * 2 - 1).toFixed(3));
       }, { passive: true });
     }
   }
 
-  // Close the phone menu after a link in it is chosen.
-  const menu = document.querySelector('.menu');
-  if (menu) menu.addEventListener('click', (e) => { if (e.target.closest('a')) menu.open = false; });
+  // The typed line under the headline cycles through its phrases.
+  const typed = document.querySelector('[data-typed]');
+  if (typed && !still) {
+    const words = typed.dataset.typed.split('|');
+    let w = 0, n = words[0].length, dir = -1;
+    const tick = () => {
+      n += dir;
+      typed.textContent = words[w].slice(0, n);
+      if (dir < 0 && n === 0) { w = (w + 1) % words.length; dir = 1; return setTimeout(tick, 300); }
+      if (dir > 0 && n === words[w].length) { dir = -1; return setTimeout(tick, 2200); }
+      setTimeout(tick, dir < 0 ? 28 : 55);
+    };
+    setTimeout(tick, 2600);
+  }
+
+  // Copy the email address
+  for (const btn of document.querySelectorAll('[data-copy]')) {
+    btn.addEventListener('click', async () => {
+      try { await navigator.clipboard.writeText(btn.dataset.copy); btn.dataset.done = ''; setTimeout(() => delete btn.dataset.done, 1500); }
+      catch { location.href = `mailto:${btn.dataset.copy}`; }
+    });
+  }
 
   // Reveal once when an element enters the viewport. Never replays, never leaves content hidden.
   const targets = document.querySelectorAll('[data-reveal]');
