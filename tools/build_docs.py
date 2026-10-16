@@ -5,6 +5,11 @@ from pathlib import Path
 SITE = Path(__file__).resolve().parent.parent / "site"
 UPDATED = "16 October 2026"
 
+INDEX = (SITE / "index.html").read_text(encoding="utf-8")
+def block(name):
+    # the header and footer are copied from index.html, so every page shares one source
+    return INDEX.split(f"<!-- {name} -->", 1)[1].split(f"<!-- /{name} -->", 1)[0].strip()
+
 HEAD = """<!doctype html>
 <html lang="en-NG">
 <head>
@@ -12,40 +17,21 @@ HEAD = """<!doctype html>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>{title} | Undeify</title>
   <meta name="description" content="{desc}">
-  <meta name="theme-color" content="#0e1726">
+  <meta name="theme-color" content="#fafafa">
   <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
   <link rel="stylesheet" href="assets/site.css">
 </head>
-<body class="doc">
+<body>
 <div class="page">
-  <header class="doc__bar">
-    <a class="wordmark" href="./" aria-label="Undeify, home">Undeify</a>
-    <nav class="nav__links" aria-label="Main">
-      <a href="./#products">Products</a>
-      <a href="./#about">About</a>
-      <a href="security.html">Security</a>
-    </nav>
-  </header>
-  <main class="doc__main">
+""" + block("header").replace("{", "{{").replace("}", "}}") + """
+  <main class="doc__main wrap" id="main">
     <h1>{title}</h1>
-    <p class="updated">Last updated {updated}</p>
+    <p class="updated label">Last updated {updated}</p>
 {body}
   </main>
-  <footer class="footer">
-    <div class="footer__notes">
-      <p>Undeify, Nigeria</p>
-      <p>Software products for businesses and everyday people</p>
-      <a class="link top" href="#">Back to the top</a>
-    </div>
-    <a class="footer__mail" href="mailto:hello@undeify.com"><span>hello@undeify.com</span></a>
-    <div class="footer__meta">
-      <span>© 2026 Undeify</span>
-      <a class="link" href="privacy.html">Privacy notice</a>
-      <a class="link" href="terms.html">Terms of use</a>
-      <a class="link" href="security.html">Security</a>
-    </div>
-  </footer>
+""" + block("footer").replace("{", "{{").replace("}", "}}") + """
 </div>
+<script src="assets/site.js" defer></script>
 </body>
 </html>
 """

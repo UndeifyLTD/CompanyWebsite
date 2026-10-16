@@ -7,10 +7,10 @@ This folder is the specification for the Undeify company website. The founders a
 | `decisions.md` | Every choice and its status |
 | `tokens.md` | Colours, type, spacing |
 | `../site/` | The built site, the source of truth for copy and layout in v1 |
-| `../design/source/` | The AI reference collage and the scene crops the site's images come from |
-| `../tools/` | `build_docs.py` (privacy, terms, security pages), `capture.mjs` (screenshots), `figma_doc.py` + `figma_flatten.mjs` (export to Figma) |
+| `DESIGN.md` | Vercel's design language as we use it, and what we must not copy |
+| `../tools/` | `build_docs.py` (privacy, terms, security pages), `capture.mjs` (screenshots) |
 
-Figma file: https://www.figma.com/design/Hwsdaunvh7t4BMdTTnmM9U (page "Website v1": desktop and phone home, plus three hero scroll moments each). Text in Figma shows a fallback font until Boska is installed on the viewing machine (free from fontshare.com).
+Figma file: https://www.figma.com/design/Hwsdaunvh7t4BMdTTnmM9U holds the first design, which was dropped on 2026-10-16. The current design is not in Figma yet.
 
 ## Run it locally
 

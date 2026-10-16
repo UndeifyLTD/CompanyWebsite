@@ -3,165 +3,233 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Undeify: software products from Nigeria</title>
+  <title>Undeify: software products built in Nigeria</title>
   <meta name="description" content="Undeify is a Nigerian product company. We design, build and run our own software for businesses and everyday people.">
-  <meta name="theme-color" content="#0e1726">
+  <meta name="theme-color" content="#fafafa">
   <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
-  <link rel="preload" href="assets/fonts/boska-400.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="assets/fonts/Geist-Variable.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="stylesheet" href="assets/site.css">
   <script>document.documentElement.classList.add('js')</script>
 </head>
 <body>
 <div class="page">
-
-  <section class="stage" aria-label="Introduction">
-    <div class="stage__pin">
-      <div class="stage__ground" aria-hidden="true"></div>
-      <div class="frame">
-        <picture class="scene scene--night">
-          <source media="(max-width: 760px)" srcset="assets/img/night-m.webp" width="900" height="1125">
-          <img src="assets/img/night.webp" width="1920" height="678" alt="A young man sits on his bed at night, looking out of a window at a city lit up at dusk." fetchpriority="high">
-        </picture>
-        <picture class="scene scene--sunrise">
-          <source media="(max-width: 760px)" srcset="assets/img/sunrise-m.webp" width="900" height="1126">
-          <img src="assets/img/sunrise.webp" width="1920" height="1521" alt="The same man, seen from behind, watches the sun rise over a city and a river." loading="lazy">
-        </picture>
-        <picture class="scene scene--terrace">
-          <source media="(max-width: 760px)" srcset="assets/img/terrace-m.webp" width="900" height="1124">
-          <img src="assets/img/terrace.webp" width="1920" height="1492" alt="He sits on a stone ledge of a garden terrace in daylight, a wide skyline and water ahead of him." loading="lazy">
-        </picture>
+<!-- header -->
+  <a class="skip" href="#main">Skip to content</a>
+  <header class="header">
+    <div class="wrap">
+      <a class="brand" href="./" aria-label="Undeify, home">
+        <svg viewBox="0 0 32 32" aria-hidden="true"><rect width="32" height="32" rx="7" fill="#171717"/><path d="M9.5 8h3.6v9.2c0 2.4 1.1 3.6 2.9 3.6s2.9-1.2 2.9-3.6V8h3.6v9.4c0 4.3-2.6 6.8-6.5 6.8s-6.5-2.5-6.5-6.8z" fill="#fff"/></svg>
+        Undeify
+      </a>
+      <nav class="nav__links" aria-label="Main">
+        <a href="./#now">NOW</a>
+        <a href="./#shiftos">ShiftOS</a>
+        <a href="./#about">About</a>
+        <a href="security.html">Security</a>
+      </nav>
+      <div class="header__actions">
+        <a class="btn btn--light btn--sm" href="security.html">Report an issue</a>
+        <a class="btn btn--dark btn--sm" href="mailto:hello@undeify.com?subject=Hello%20Undeify">Email us</a>
       </div>
+      <details class="menu">
+        <summary aria-label="Menu"><span></span></summary>
+        <nav class="menu__panel" aria-label="Menu">
+          <a href="./#now">NOW</a>
+          <a href="./#shiftos">ShiftOS</a>
+          <a href="./#about">About</a>
+          <a href="security.html">Security</a>
+          <a class="btn btn--dark" href="mailto:hello@undeify.com?subject=Hello%20Undeify">Email us</a>
+        </nav>
+      </details>
+    </div>
+  </header>
+<!-- /header -->
 
-      <header class="nav">
-        <a class="wordmark" href="./" aria-label="Undeify, home">Undeify</a>
-        <nav class="nav__links" aria-label="Main">
-          <a href="#products">Products</a>
-          <a href="#about">About</a>
+  <main id="main">
+    <section class="hero wrap" aria-labelledby="hero-title">
+      <div class="hero__grid">
+        <div>
+          <h1 id="hero-title">We build our own software.</h1>
+          <p class="hero__lead">Undeify is a Nigerian product company. We design, build and run apps for businesses and everyday people, with security in from the first line.</p>
+          <div class="hero__actions">
+            <a class="btn btn--dark" href="mailto:hello@undeify.com?subject=Hello%20Undeify">Email us</a>
+            <a class="btn btn--light" href="#now">See our products</a>
+          </div>
+        </div>
+
+        <div class="stack" aria-hidden="true">
+          <div class="stack__space">
+            <div class="pane pane--next">
+              <div class="pane__bar"><b>In research</b><span class="label">Language</span></div>
+              <div class="pane__body"><div class="lines"><i></i><i></i><i></i><i></i><i></i><i></i></div></div>
+            </div>
+            <div class="pane pane--shiftos">
+              <div class="pane__bar"><b>ShiftOS</b><span class="label">Rota</span></div>
+              <div class="pane__body"><div class="week"><i class="on"></i><i class="on"></i><i></i><i class="half"></i><i class="on"></i><i></i><i></i><i></i><i class="half"></i><i class="on"></i><i class="on"></i><i></i><i class="half"></i><i></i><i class="on"></i><i></i><i class="on"></i><i class="half"></i><i></i><i class="on"></i><i class="half"></i><i class="half"></i><i></i><i class="on"></i><i></i><i class="on"></i><i class="on"></i><i></i></div></div>
+            </div>
+            <div class="pane pane--now">
+              <div class="pane__bar"><b>NOW</b><span class="label">Lagos</span></div>
+              <div class="pane__body"><span class="dot"></span><span class="dot"></span><span class="dot"></span><span class="dot"></span><span class="dot"></span></div>
+            </div>
+          </div>
+        </div>
+
+        <nav class="hero__side" aria-label="Products">
+          <a href="#now">NOW</a>
+          <a href="#shiftos">ShiftOS</a>
+          <a href="#how">How we build</a>
           <a href="security.html">Security</a>
         </nav>
-      </header>
-
-      <div class="copy copy--a">
-        <h1>We build our own software.</h1>
-        <p class="standfirst">A Nigerian company that designs, builds and runs its own apps.</p>
-        <div class="actions">
-          <a class="button" href="mailto:hello@undeify.com?subject=Hello%20Undeify">Email us</a>
-          <a class="link" href="#products">See what we are building</a>
-        </div>
-        <p class="clock" data-clock>Based in Nigeria.</p>
       </div>
+      <p class="hero__note"><a class="pill label" href="#about">Built in Nigeria <span aria-hidden="true">›</span></a></p>
+    </section>
 
-      <div class="copy copy--b">
-        <p class="statement">Every product starts as a problem worth a few late nights.</p>
-        <p class="note">We only build for problems we understand, most of them from everyday life in Nigeria.</p>
-      </div>
-
-      <div class="copy copy--c">
-        <p class="statement">Then we build it, test it with real people, and keep improving it.</p>
-        <p class="note">Nothing ships until we have asked how it could be abused, and fixed the answer.</p>
-      </div>
-    </div>
-  </section>
-
-  <section class="intro wrap" aria-label="What Undeify is">
-    <p class="intro__lead" data-reveal>Undeify is a product company, not an agency. We pick problems we understand, build software for them, and stay to run and improve it long after launch.</p>
-    <div class="intro__cols grid">
-      <p data-reveal data-d="1"><b>Our own products.</b> We do not build websites or apps for clients. Everything we make carries our name, so we decide what goes in, what stays out, and when it is ready. Our first products serve two very different people: someone choosing where to go tonight in Lagos, and a manager planning next week's shifts.</p>
-      <p data-reveal data-d="2"><b>Security from the start.</b> We ask how each feature could be abused before we build it, not after. Secrets stay out of our code, and every service gets only the access it needs. When we find a weakness, we fix it and write down what we learned, so the next product starts safer than the last.</p>
-      <p data-reveal data-d="3"><b>Built for Nigerian law.</b> We design every product around the Nigeria Data Protection Act 2023: collect only what a feature needs, say plainly why, and keep it no longer than necessary. This website sets no cookies, runs no analytics and has no tracking of any kind.</p>
-      <p data-reveal data-d="4"><b>Small on purpose.</b> Undeify is run by its two founders, who design, build and support everything themselves. Decisions are quick, and the people who wrote the code are the people who answer your email. We will grow the team when the products need it, not before.</p>
-    </div>
-  </section>
-
-  <section class="products" id="products" aria-labelledby="products-title">
-    <h2 id="products-title" data-reveal>Our products</h2>
-
-    <article class="folder folder--now" aria-labelledby="now-title">
-      <h3 class="folder__tab" id="now-title">NOW</h3>
-      <div class="folder__body">
-        <p class="folder__meta" data-reveal>A social map of places, starting in Lagos</p>
-        <div class="folder__main grid">
-          <figure data-reveal><img src="assets/img/now.webp" width="1600" height="1001" alt="A wide city skyline across the water on a clear morning." loading="lazy"></figure>
-          <div class="folder__text">
-            <p data-reveal data-d="1">NOW is a social map of places. You post about places you have actually been, follow your friends, and see where people really go and whether it was worth it.</p>
-            <p class="status" data-reveal data-d="2">In design, heading for a private beta in Lagos.</p>
-            <a class="link" data-reveal data-d="3" href="mailto:hello@undeify.com?subject=NOW%20private%20beta">Ask about the beta</a>
-          </div>
-        </div>
-      </div>
-    </article>
-
-    <article class="folder folder--shiftos" aria-labelledby="shiftos-title">
-      <h3 class="folder__tab" id="shiftos-title">ShiftOS</h3>
-      <div class="folder__body">
-        <p class="folder__meta" data-reveal>Workforce scheduling and operations</p>
-        <div class="folder__main grid">
-          <figure data-reveal><img src="assets/img/shiftos.webp" width="1600" height="1000" alt="The stepped white corner of a modern office building against a pale blue sky." loading="lazy"></figure>
-          <div class="folder__text">
-            <p data-reveal data-d="1">ShiftOS is a scheduling and operations platform for teams that work in shifts. It brings rotas, attendance and leave into one place, so managers and staff work from the same schedule.</p>
-            <p class="status" data-reveal data-d="2">Running in production while we prepare it for a wider release.</p>
-            <a class="link" data-reveal data-d="3" href="mailto:hello@undeify.com?subject=ShiftOS">Ask about ShiftOS</a>
-          </div>
-        </div>
-      </div>
-    </article>
-
-    <article class="folder folder--next" aria-labelledby="next-title">
-      <h3 class="folder__tab" id="next-title">In research</h3>
-      <div class="folder__body">
-        <p class="folder__meta" data-reveal>Language learning</p>
-        <div class="folder__main grid">
-          <figure data-reveal><img src="assets/img/research.webp" width="1600" height="1000" alt="A narrow wedge-shaped building corner seen from below against a teal sky." loading="lazy"></figure>
-          <div class="folder__text">
-            <p data-reveal data-d="1">We are researching an app for learning Yorùbá, made for families who live abroad, starting with parents who want to learn it themselves.</p>
-            <p class="status" data-reveal data-d="2">On hold while NOW comes first. We will build it only once people tell us they need it.</p>
-          </div>
-        </div>
-      </div>
-    </article>
-  </section>
-
-  <section class="about wrap grid" id="about" aria-label="About Undeify">
-    <ul class="about__facts" data-reveal>
-      <li><b>Where</b>Nigeria</li>
-      <li><b>Who</b>Two founders</li>
-      <li><b>Write to</b><a class="link" href="mailto:hello@undeify.com">hello@undeify.com</a></li>
-    </ul>
-    <div class="about__text" data-reveal data-d="1">
-      <p><span class="name">Undeify was started by Isaac and Tolu.</span> Isaac leads the company and its security; Tolu leads development. We would rather ship one product properly than five halfway.</p>
-      <p>We are completing our registration with the Corporate Affairs Commission. Our company details will appear here once it is done.</p>
-    </div>
-  </section>
-
-  <section class="contact wrap grid" aria-labelledby="contact-title">
-    <p class="contact__line" data-reveal>Write to us about our products, a partnership, or a security problem you have found.</p>
-    <figure data-reveal data-d="1"><img src="assets/img/contact.webp" width="480" height="480" alt="A city at sunrise, seen over a man's shoulder." loading="lazy"></figure>
-    <div class="contact__links" data-reveal data-d="2">
-      <h2 id="contact-title">How to reach us</h2>
+    <section class="facts wrap" aria-label="At a glance">
       <ul>
-        <li><a class="link" href="mailto:hello@undeify.com">hello@undeify.com</a></li>
-        <li><a class="link" href="security.html">Report a security problem</a></li>
+        <li>Built in Nigeria</li>
+        <li>Designed for the NDPA 2023</li>
+        <li>No cookies, no trackers</li>
+        <li>Abuse cases checked before we ship</li>
+        <li>Run by its founders</li>
       </ul>
-      <p class="small">Nigeria. We reply within two working days.</p>
-    </div>
-  </section>
+    </section>
 
+    <section class="feature wrap" id="now" aria-labelledby="now-title">
+      <h2 id="now-title" data-reveal>See where people in Lagos actually go</h2>
+      <div class="feature__grid">
+        <figure class="frame" data-reveal data-d="1">
+          <div class="map" aria-hidden="true">
+            <i class="road road--a"></i><i class="road road--b"></i><i class="road road--c"></i>
+            <div class="place place--a"><span>Yaba <em>· food</em></span></div>
+            <div class="place place--b"><span>Ikeja <em>· live music</em></span></div>
+            <div class="place place--c"><span>Victoria Island <em>· art</em></span></div>
+            <div class="place place--d"><span>Lekki <em>· beach</em></span></div>
+          </div>
+          <figcaption class="frame__caption label">Illustration of NOW, not a screenshot</figcaption>
+        </figure>
+        <div class="feature__aside">
+          <div>
+            <p class="feature__claim" data-reveal><strong>NOW is a social map of places.</strong> Post about the places you have really been, follow your friends, and see where people go and whether it was worth it.</p>
+            <p class="feature__status" data-reveal data-d="1"><span class="pill label">In design · private beta in Lagos</span></p>
+          </div>
+          <div>
+            <ul class="feature__list" data-reveal data-d="2">
+              <li class="label">Features</li>
+              <li>Posts about places you have visited</li>
+              <li>Follow friends and see where they go</li>
+              <li>Worth-it ratings from real visits</li>
+              <li>A map that starts with Lagos</li>
+            </ul>
+            <p class="feature__cta" data-reveal data-d="3"><a class="textlink" href="mailto:hello@undeify.com?subject=NOW%20private%20beta">Ask about the beta →</a></p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="feature wrap" id="shiftos" aria-labelledby="shiftos-title">
+      <h2 id="shiftos-title" data-reveal>Run every shift from one schedule</h2>
+      <div class="feature__grid">
+        <figure class="frame" data-reveal data-d="1">
+          <div class="rota" aria-hidden="true">
+            <span></span><span class="day">Mon</span><span class="day">Tue</span><span class="day">Wed</span><span class="day">Thu</span><span class="day">Fri</span><span class="day">Sat</span><span class="day">Sun</span>
+            <span>Front desk</span><b class="am"></b><b class="am"></b><b class="pm"></b><b class="am"></b><b class="leave"></b><b class="pm"></b><b></b>
+            <span>Kitchen</span><b class="pm"></b><b></b><b class="am"></b><b class="am"></b><b class="pm"></b><b class="am"></b><b class="am"></b>
+            <span>Security</span><b class="am"></b><b class="pm"></b><b class="pm"></b><b></b><b class="am"></b><b class="am"></b><b class="pm"></b>
+            <span>Cleaning</span><b></b><b class="am"></b><b class="leave"></b><b class="leave"></b><b class="am"></b><b class="pm"></b><b class="am"></b>
+          </div>
+          <p class="legend label" aria-hidden="true"><span><i></i>Morning</span><span><i class="pm"></i>Evening</span><span><i class="leave"></i>Leave</span></p>
+          <figcaption class="frame__caption label">Illustration of ShiftOS, not a screenshot</figcaption>
+        </figure>
+        <div class="feature__aside">
+          <div>
+            <p class="feature__claim" data-reveal><strong>ShiftOS is scheduling and operations for teams that work in shifts.</strong> Rotas, attendance and leave in one place, so managers and staff work from the same plan.</p>
+            <p class="feature__status" data-reveal data-d="1"><span class="pill label">Running in production</span></p>
+          </div>
+          <div>
+            <ul class="feature__list" data-reveal data-d="2">
+              <li class="label">Features</li>
+              <li>Shift scheduling and rotas</li>
+              <li>Attendance</li>
+              <li>Leave requests</li>
+              <li>Roles for managers, supervisors and staff</li>
+            </ul>
+            <p class="feature__cta" data-reveal data-d="3"><a class="textlink" href="mailto:hello@undeify.com?subject=ShiftOS">Ask about ShiftOS →</a></p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="how wrap" id="how" aria-labelledby="how-title">
+      <h2 id="how-title" data-reveal>How we build</h2>
+      <div class="bento">
+        <article class="card card--wide" data-reveal>
+          <p class="card__mark">security.txt</p>
+          <h3>Security from the start</h3>
+          <p>We ask how each feature could be abused before we build it, not after. Secrets stay out of our code, every service gets only the access it needs, and anyone can <a class="textlink" href="security.html">report a problem</a>.</p>
+        </article>
+        <article class="card" data-reveal data-d="1">
+          <p class="card__mark">NDPA</p>
+          <h3>Built for Nigerian law</h3>
+          <p>Every product is designed around the Nigeria Data Protection Act 2023: collect only what a feature needs, say why, and keep it no longer than necessary.</p>
+        </article>
+        <article class="card" data-reveal>
+          <p class="card__mark">2</p>
+          <h3>Small on purpose</h3>
+          <p>Two founders design, build and support everything. The people who wrote the code answer your email.</p>
+        </article>
+        <article class="card card--wide" data-reveal data-d="1">
+          <p class="label">In research</p>
+          <h3>Learning Yorùbá, for families abroad</h3>
+          <p>We are researching an app for learning Yorùbá, starting with parents who want to learn it themselves. It is on hold while NOW comes first, and we will build it only once people tell us they need it.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="about wrap" id="about" aria-labelledby="about-title">
+      <div class="about__grid">
+        <h2 id="about-title" data-reveal>About Undeify</h2>
+        <div class="about__text">
+          <p data-reveal><strong>Undeify is a product company, not an agency.</strong> We pick problems we understand, build software for them, and stay to run and improve it long after launch.</p>
+          <p data-reveal data-d="1"><strong>Started by Isaac and Tolu.</strong> Isaac leads the company and its security; Tolu leads development. We are completing our registration with the Corporate Affairs Commission, and our company details will appear here once it is done.</p>
+          <dl class="about__facts" data-reveal data-d="2">
+            <div><dt class="label">Where</dt><dd>Nigeria</dd></div>
+            <div><dt class="label">Founders</dt><dd>Isaac and Tolu</dd></div>
+            <div><dt class="label">Contact</dt><dd><a class="textlink" href="mailto:hello@undeify.com">hello@undeify.com</a></dd></div>
+          </dl>
+        </div>
+      </div>
+    </section>
+
+    <section class="closing wrap" aria-labelledby="closing-title">
+      <h2 id="closing-title" data-reveal>Talk to the people who build it</h2>
+      <p data-reveal data-d="1">Questions about our products, a partnership, or a security problem you have found. A founder replies within two working days.</p>
+      <div class="closing__actions" data-reveal data-d="2">
+        <a class="btn btn--dark" href="mailto:hello@undeify.com?subject=Hello%20Undeify">Email us</a>
+        <a class="btn btn--light" href="security.html">Report a security problem</a>
+      </div>
+    </section>
+  </main>
+
+<!-- footer -->
   <footer class="footer">
-    <div class="footer__notes" data-reveal>
-      <p>Undeify, Nigeria</p>
-      <p>Software products for businesses and everyday people</p>
-      <a class="link top" href="#">Back to the top</a>
-    </div>
-    <a class="footer__mail" data-reveal href="mailto:hello@undeify.com"><span>hello</span><span>@undeify.com</span></a>
-    <div class="footer__meta" data-reveal data-d="1">
-      <span>© 2026 Undeify</span>
-      <a class="link" href="privacy.html">Privacy notice</a>
-      <a class="link" href="terms.html">Terms of use</a>
-      <a class="link" href="security.html">Security</a>
-      <span class="credits">Scenes generated for Undeify. Photographs by Julien Moreau and Anthony Delanoix on Unsplash.</span>
+    <div class="wrap">
+      <div class="footer__cols">
+        <div class="footer__brand">
+          <a class="brand" href="./" aria-label="Undeify, home"><svg viewBox="0 0 32 32" aria-hidden="true"><rect width="32" height="32" rx="7" fill="#171717"/><path d="M9.5 8h3.6v9.2c0 2.4 1.1 3.6 2.9 3.6s2.9-1.2 2.9-3.6V8h3.6v9.4c0 4.3-2.6 6.8-6.5 6.8s-6.5-2.5-6.5-6.8z" fill="#fff"/></svg>Undeify</a>
+          <p class="footer__blurb">Software products for businesses and everyday people, built in Nigeria.</p>
+        </div>
+        <nav aria-labelledby="f-products"><h2 id="f-products">Products</h2><ul><li><a href="./#now">NOW</a></li><li><a href="./#shiftos">ShiftOS</a></li></ul></nav>
+        <nav aria-labelledby="f-company"><h2 id="f-company">Company</h2><ul><li><a href="./#about">About</a></li><li><a href="./#how">How we build</a></li><li><a href="mailto:hello@undeify.com">Contact</a></li></ul></nav>
+        <nav aria-labelledby="f-legal"><h2 id="f-legal">Legal</h2><ul><li><a href="privacy.html">Privacy notice</a></li><li><a href="terms.html">Terms of use</a></li></ul></nav>
+        <nav aria-labelledby="f-security"><h2 id="f-security">Security</h2><ul><li><a href="security.html">Report a problem</a></li><li><a href=".well-known/security.txt">security.txt</a></li></ul></nav>
+      </div>
+      <div class="footer__bottom">
+        <span>© 2026 Undeify. Nigeria.</span>
+        <span>No cookies. No trackers.</span>
+      </div>
     </div>
   </footer>
-
+<!-- /footer -->
 </div>
 <script src="assets/site.js" defer></script>
 </body>

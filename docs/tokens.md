@@ -1,46 +1,43 @@
 # Design tokens
 
-The only colours, type and spacing the site may use. The live values are the custom properties at the top of `site/assets/site.css`; this file must match them.
+The only colours, type and spacing the site may use. The live values are the custom properties at the top of `site/assets/site.css`; this file must match them. Where they come from: `docs/DESIGN.md`.
 
 ## Colour
 
 | Token | Value | Use |
 |-------|-------|-----|
-| `--navy` | #0e1726 | Dark ground: the stage at night, the contact band, the research band |
-| `--navy-2` | #1a2638 | The NOW band (one tone step up from navy) |
-| `--ivory` | #eeede9 | Paper: the page ground |
-| `--stone` | #dedad2 | The ShiftOS band (one tone step down from ivory) |
-| `--ink` | #141a24 | Text on ivory and stone |
-| `--muted` | #554c42 | Secondary text on ivory and stone (7:1) |
-| `--ink-inv` | #eeede9 | Text on navy |
-| `--muted-inv` | #bdb5a8 | Secondary text on navy (8:1) |
-| `--amber` | #e3a04a | The one accent: buttons, the footer field, the NOW tab |
-| `--amber-ink` | #0e1726 | Text on amber |
+| `--bg` | #fafafa | Page background |
+| `--surface` | #ffffff | Cards, frames, white buttons |
+| `--fill` | #f2f2f2 | Subtle fills inside diagrams, hover on white buttons |
+| `--ink` | #171717 | Text, black buttons, the logo |
+| `--ink-2` | #4d4d4d | Secondary text |
+| `--ink-3` | #737373 | Small labels (4.6:1 on the background) |
+| `--line` | #ebebeb | Every border and divider, always 1px |
+| `--focus` | hsl(212 100% 48%) | Keyboard focus ring only |
 
-No gradients, shadows, glass or outlines. The one exception is the dark scrim under the hero text on phones.
+No shadows except 1px rings. No colour accents.
 
 ## Type
 
-One family: **Boska** (400, 400 italic, 500), self-hosted from `site/assets/fonts/`. Fallback: Georgia.
+Geist Sans (variable, 100–900) for everything; Geist Mono for small uppercase labels, pills and the facts strip. Self-hosted from `site/assets/fonts/`.
 
-| Step | Size | Use |
-|------|------|-----|
-| `--step-small` | 14px | Notes, meta lines, facts |
-| `--step-body` | 17–19px | Running text |
-| `--step-lead` | 22–34px | Statements, the intro lead, tabs, the wordmark |
-| `--step-head` | 32–64px | Section headings |
-| `--step-display` | 44–108px | The hero headline |
+| Token | Size | Use |
+|-------|------|-----|
+| `--h1` | 40–64px, weight 400, tracking -0.06em | Hero headline |
+| `--h2` | 32–56px, weight 450, tracking -0.06em | Section headings |
+| `--h3` | 24px, weight 500 | Card titles |
+| `--lead` | 20–24px | Claims and about text |
+| `--body` | 16px | Running text, buttons |
+| `--small` | 14px | Nav, lists, footer |
+| `--label` | 12px mono, uppercase | Labels and pills |
 
-The footer email is set to fill the width (up to 160px). Headlines: tracking -0.02em, leading 0.95. Body: leading 1.5.
+## Space and shape
 
-## Space
+- Side margin `--margin` 24px; content width `--max` 1392px.
+- Section gap `--section` 96–192px.
+- Header 64px, sticky, 1px bottom line.
+- Buttons: 40px pills (32px small, 44px full-width on phones). Cards and frames: 12px radius.
 
-- Page margin `--margin`: 16–36px.
-- Column gap `--gutter`: 16–32px. 12-column grid.
-- Section gap `--section`: 96–192px.
-- The axis `--axis`: 42% of the width. Headings and lead text start on it on desktop.
-- One corner radius everywhere: 0.
+## Breakpoints
 
-## Breakpoint
-
-One: the page is a container, and at 760px wide or less the phone layout applies (`@container page (max-width: 760px)`).
+The page is a container: tablet layout at 1000px wide or less, phone layout at 720px or less.
