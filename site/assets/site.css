@@ -87,17 +87,17 @@ img, svg { display: block; max-width: 100%; }
 
 /* ---------- hero ---------- */
 .hero { position: relative; min-height: min(calc(100svh - var(--header)), 900px); display: flex; flex-direction: column; }
-.hero__body { position: relative; flex: 1; display: grid; grid-template-columns: 356px 1fr; align-items: center; }
+.hero__body { flex: 1; display: grid; grid-template-columns: minmax(0, 1fr) auto; align-items: center; }
 .hero__copy { position: relative; z-index: 2; }
-.hero h1 { font-size: 64px; line-height: 64px; font-weight: 400; letter-spacing: -0.06em; }
+.hero h1 { max-width: 380px; font-size: 64px; line-height: 64px; font-weight: 400; letter-spacing: -0.06em; }
 .typed { display: none; margin-top: 16px; min-height: 24px; font-family: var(--mono); font-size: 16px; line-height: 24px; color: var(--ink-2); }
 .typed::after { content: ""; display: inline-block; width: 8px; height: 18px; margin-left: 2px; vertical-align: -3px; background: var(--ink); animation: caret 1s steps(1) infinite; }
 @keyframes caret { 50% { opacity: 0; } }
 .hero__actions { margin-top: 32px; display: flex; gap: 12px; }
-.hero__side { position: absolute; z-index: 6; left: calc(50% + 330px); top: 50%; transform: translateY(-50%); display: grid; gap: 4px; }
+.hero__side { justify-self: end; display: grid; gap: 4px; }
 .hero__side a { font-size: 14px; line-height: 20px; color: var(--ink-2); padding: 2px 0; transition: color 150ms ease; }
 .hero__side a:hover { color: var(--ink); }
-.recap { display: flex; justify-content: center; }
+.recap { display: flex; margin-bottom: 24px; }
 .recap a { display: inline-flex; align-items: center; gap: 6px; height: 34px; padding: 6px 14px; border-radius: 999px; background: var(--bg); box-shadow: 0 0 0 1px var(--line); font-family: var(--mono); font-size: 14px; line-height: 20px; text-transform: uppercase; letter-spacing: 0.02em; transition: background-color 150ms ease; }
 .recap a:hover { background: var(--fill); }
 .recap svg { width: 12px; height: 12px; }
@@ -105,41 +105,6 @@ img, svg { display: block; max-width: 100%; }
 .marks li { font-weight: 600; font-size: 17px; letter-spacing: -0.03em; color: var(--ink); white-space: nowrap; }
 .marks li.m { font-family: var(--mono); font-weight: 500; font-size: 15px; letter-spacing: 0; }
 
-/* The hanging crate: our own container, drawn in CSS 3D, hanging on a crane hook at the centre of the screen.
-   Like the object on Vercel's page it stays fixed in the middle of the viewport while the page scrolls under it (desktop). */
-.rig { --rx: 0; --ry: 0; position: fixed; z-index: 5; top: var(--header); left: 50%; width: 600px; height: 600px; margin-left: -300px; pointer-events: none; }
-.rig__swing { position: absolute; inset: 0; transform-origin: 50% -300px; animation: sway 8s ease-in-out infinite; }
-@keyframes sway { 0%, 100% { transform: rotate(-0.8deg); } 50% { transform: rotate(0.8deg); } }
-.rig__lines { position: absolute; left: 0; top: -40px; width: 600px; height: 190px; overflow: visible; }
-.box { --w: 500px; --h: 300px; --d: 150px; position: absolute; left: 50px; top: 168px; width: var(--w); height: var(--h); perspective: 1400px; perspective-origin: 50% 10%; }
-.box__space { position: absolute; inset: 0; transform-style: preserve-3d; transform: rotateX(calc(-3deg + var(--ry) * 3deg)) rotateY(calc(var(--rx) * 8deg)); transition: transform 1s var(--ease); }
-.face { position: absolute; left: 50%; top: 50%; backface-visibility: hidden; }
-/* corrugated steel: vertical ribs, darker toward the bottom, inside a lighter steel frame */
-.face--front, .face--back { width: var(--w); height: var(--h); margin: calc(var(--h) / -2) 0 0 calc(var(--w) / -2);
-  background:
-    linear-gradient(180deg, rgb(255 255 255 / 0.08), rgb(0 0 0 / 0.35)),
-    repeating-linear-gradient(90deg, #0c0c0c 0 3px, #2b2b2b 5px 7px, #0c0c0c 9px 12px);
-  box-shadow: inset 0 0 0 9px #2f2f2f, inset 0 0 0 10px #101010, inset 0 14px 0 0 #3a3a3a, inset 0 -14px 0 0 #1f1f1f; }
-.face--left, .face--right { width: var(--d); height: var(--h); margin: calc(var(--h) / -2) 0 0 calc(var(--d) / -2);
-  background: linear-gradient(180deg, rgb(255 255 255 / 0.04), rgb(0 0 0 / 0.5)), repeating-linear-gradient(90deg, #080808 0 3px, #1e1e1e 5px 7px, #080808 9px 12px);
-  box-shadow: inset 0 0 0 8px #242424; }
-.face--top, .face--bottom { width: var(--w); height: var(--d); margin: calc(var(--d) / -2) 0 0 calc(var(--w) / -2); background: linear-gradient(180deg, #4a4a4a, #262626); box-shadow: inset 0 0 0 6px #555; }
-.face--bottom { background: #080808; }
-.face--front { transform: translateZ(calc(var(--d) / 2)); display: flex; align-items: center; justify-content: center; gap: 22px; color: #fff; }
-.face--back { transform: rotateY(180deg) translateZ(calc(var(--d) / 2)); }
-.face--right { transform: rotateY(90deg) translateZ(calc(var(--w) / 2)); }
-.face--left { transform: rotateY(-90deg) translateZ(calc(var(--w) / 2)); }
-.face--top { transform: rotateX(90deg) translateZ(calc(var(--h) / 2)); }
-.face--bottom { transform: rotateX(-90deg) translateZ(calc(var(--h) / 2)); }
-.face--front::before, .face--front::after { content: ""; position: absolute; top: 4px; bottom: 4px; width: 12px; background: linear-gradient(90deg, #4a4a4a, #2a2a2a); }
-.face--front::before { left: 4px; } .face--front::after { right: 4px; }
-.corner { position: absolute; width: 22px; height: 16px; border-radius: 2px; background: linear-gradient(135deg, #6b6b6b, #2e2e2e); box-shadow: inset 0 0 0 1px #111; }
-.corner--tl { left: 0; top: 0; } .corner--tr { right: 0; top: 0; } .corner--bl { left: 0; bottom: 0; } .corner--br { right: 0; bottom: 0; }
-.face--front .word { position: relative; font-weight: 600; font-size: 96px; line-height: 1; letter-spacing: -0.06em; text-shadow: 0 1px 0 rgb(0 0 0 / 0.4); }
-.face--front .badge { position: relative; width: 78px; height: 78px; border-radius: 18px; box-shadow: inset 0 0 0 6px #fff; display: grid; place-items: center; }
-.face--front .badge svg { width: 42px; height: 42px; }
-.rig .recap { position: absolute; top: 520px; left: 0; right: 0; pointer-events: auto; }
-.recap--flow { display: none; }
 
 /* ---------- feature sections ---------- */
 .features { margin-top: 208px; }
@@ -243,9 +208,7 @@ a.tile:hover { background: var(--surface); }
   .js [data-reveal].is-in { opacity: 1; transform: none; }
 }
 @media (prefers-reduced-motion: reduce) {
-  .rig__swing { animation: none; }
   .typed::after { animation: none; }
-  .box__space { transition: none; }
 }
 
 /* ---------- tablet: Vercel's layout steps down below about 1180px ---------- */
@@ -260,22 +223,17 @@ a.tile:hover { background: var(--surface); }
   .shot { height: auto; aspect-ratio: 921 / 516; }
   .footer__cols { grid-template-columns: repeat(3, minmax(0, 1fr)); }
 }
-@container page (max-width: 900px) {
-  .rig { transform: scale(0.8); transform-origin: 50% 0; }
-}
 
 /* ---------- phone ---------- */
 @container page (max-width: 640px) {
   .header__in { padding-inline: 16px 24px; }
   .nav, .header__actions { display: none; }
   .burger { display: grid; }
-  .hero { min-height: 0; padding-top: 340px; }
-  .rig { position: absolute; transform: scale(0.66); transform-origin: 50% 0; }
-  .rig .recap { display: none; }
-  .recap--flow { display: flex; }
+  .hero { min-height: 0; padding-top: 72px; }
   .typed { display: block; }
   .hero__body { display: block; text-align: center; }
-  .recap { position: static; order: -1; margin: 0 0 8px; }
+  .recap { justify-content: center; margin: 0 0 8px; }
+  .hero h1 { max-width: none; }
   .hero { display: flex; flex-direction: column; }
   .hero h1 { font-size: 24px; line-height: 32px; letter-spacing: -0.04em; margin-top: 8px; }
   .typed { margin-top: 12px; }

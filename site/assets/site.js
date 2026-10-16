@@ -1,4 +1,4 @@
-// Undeify website: phone menu, the hanging crate in the hero, the typed line, copy-email, reveal-on-entry.
+// Undeify website: phone menu, the typed line, copy-email, reveal-on-entry.
 (() => {
   const still = matchMedia('(prefers-reduced-motion: reduce)').matches;
 
@@ -10,15 +10,6 @@
     burger.addEventListener('click', () => set(burger.getAttribute('aria-expanded') !== 'true'));
     menu.addEventListener('click', (e) => { if (e.target.closest('a')) set(false); });
     addEventListener('keydown', (e) => { if (e.key === 'Escape') set(false); });
-  }
-
-  // The crate leans a little toward the pointer on desktop.
-  const rig = document.querySelector('.rig');
-  if (rig && !still && matchMedia('(pointer: fine)').matches) {
-    addEventListener('pointermove', (e) => {
-      rig.style.setProperty('--rx', ((e.clientX / innerWidth) * 2 - 1).toFixed(3));
-      rig.style.setProperty('--ry', ((e.clientY / innerHeight) * 2 - 1).toFixed(3));
-    }, { passive: true });
   }
 
   // The typed line under the headline cycles through its phrases.
