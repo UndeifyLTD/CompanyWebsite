@@ -12,19 +12,13 @@
     addEventListener('keydown', (e) => { if (e.key === 'Escape') set(false); });
   }
 
-  // The crate is hoisted up out of view as the hero scrolls away, and leans toward the pointer on desktop.
+  // The crate leans a little toward the pointer on desktop.
   const rig = document.querySelector('.rig');
-  if (rig && !still) {
-    let queued = false;
-    const lift = () => { queued = false; rig.style.setProperty('--lift', `${Math.round(-scrollY * 1.15)}px`); };
-    addEventListener('scroll', () => { if (!queued) { queued = true; requestAnimationFrame(lift); } }, { passive: true });
-    lift();
-    if (matchMedia('(pointer: fine)').matches) {
-      addEventListener('pointermove', (e) => {
-        rig.style.setProperty('--rx', ((e.clientX / innerWidth) * 2 - 1).toFixed(3));
-        rig.style.setProperty('--ry', ((e.clientY / innerHeight) * 2 - 1).toFixed(3));
-      }, { passive: true });
-    }
+  if (rig && !still && matchMedia('(pointer: fine)').matches) {
+    addEventListener('pointermove', (e) => {
+      rig.style.setProperty('--rx', ((e.clientX / innerWidth) * 2 - 1).toFixed(3));
+      rig.style.setProperty('--ry', ((e.clientY / innerHeight) * 2 - 1).toFixed(3));
+    }, { passive: true });
   }
 
   // The typed line under the headline cycles through its phrases.

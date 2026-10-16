@@ -59,14 +59,18 @@
 <!-- /header -->
 
   <main id="main">
-    <div class="rig" aria-hidden="true">
-      <div class="rig__cable"></div>
+    <div class="rig">
       <div class="rig__swing">
-        <svg class="rig__hook" viewBox="0 0 26 40"><rect x="11" y="0" width="4" height="10" fill="#8f8f8f"/><path d="M13 10c-6 0-9 4-9 9 0 6 4 10 9 10 4 0 7-3 7-7" fill="none" stroke="#171717" stroke-width="4"/><path d="M5 14l16 8M5 19l16 8" stroke="#fafafa" stroke-width="2"/></svg>
-        <i class="rig__sling rig__sling--l"></i><i class="rig__sling rig__sling--r"></i>
-        <div class="box">
+        <svg class="rig__lines" viewBox="0 0 600 190" aria-hidden="true">
+          <defs><pattern id="hazard" width="10" height="10" patternUnits="userSpaceOnUse" patternTransform="rotate(45)"><rect width="5" height="10" fill="#171717"/><rect x="5" width="5" height="10" fill="#fafafa"/></pattern></defs>
+          <line x1="300" y1="-500" x2="300" y2="92" stroke="#9a9a9a" stroke-width="3"/>
+          <rect x="282" y="88" width="36" height="40" rx="5" fill="url(#hazard)" stroke="#171717" stroke-width="2"/>
+          <path d="M300 128v8c0 7-11 7-11 15 0 8 7 13 13 13" fill="none" stroke="#171717" stroke-width="5" stroke-linecap="round"/>
+          <path d="M300 164 52 208M300 164l248 44" stroke="#5c5c5c" stroke-width="2.5" fill="none"/>
+        </svg>
+        <div class="box" aria-hidden="true">
           <div class="box__space">
-            <div class="face face--front"><span class="word">Undeify</span><span class="badge"><svg viewBox="0 0 32 32"><path d="M9.5 8h3.6v9.2c0 2.4 1.1 3.6 2.9 3.6s2.9-1.2 2.9-3.6V8h3.6v9.4c0 4.3-2.6 6.8-6.5 6.8s-6.5-2.5-6.5-6.8z" fill="#fff"/></svg></span></div>
+            <div class="face face--front"><i class="corner corner--tl"></i><i class="corner corner--tr"></i><i class="corner corner--bl"></i><i class="corner corner--br"></i><span class="word">Undeify</span><span class="badge"><svg viewBox="0 0 32 32"><path d="M9.5 8h3.6v9.2c0 2.4 1.1 3.6 2.9 3.6s2.9-1.2 2.9-3.6V8h3.6v9.4c0 4.3-2.6 6.8-6.5 6.8s-6.5-2.5-6.5-6.8z" fill="#fff"/></svg></span></div>
             <div class="face face--back"></div>
             <div class="face face--right"></div>
             <div class="face face--left"></div>
@@ -74,6 +78,7 @@
             <div class="face face--bottom"></div>
           </div>
         </div>
+        <p class="recap"><a href="about.html">Built in Nigeria <svg viewBox="0 0 12 12" aria-hidden="true"><path d="M4.5 3 7.5 6l-3 3" fill="none" stroke="currentColor" stroke-width="1.3"/></svg></a></p>
       </div>
     </div>
 
@@ -87,14 +92,13 @@
             <a class="btn btn--light" href="#now">See products</a>
           </div>
         </div>
-        <div></div>
         <nav class="hero__side" aria-label="Products">
           <a href="#now">NOW</a>
           <a href="#shiftos">ShiftOS</a>
           <a href="#security">Security</a>
         </nav>
       </div>
-      <p class="recap"><a href="about.html">Built in Nigeria <svg viewBox="0 0 12 12" aria-hidden="true"><path d="M4.5 3 7.5 6l-3 3" fill="none" stroke="currentColor" stroke-width="1.3"/></svg></a></p>
+      <p class="recap recap--flow"><a href="about.html">Built in Nigeria <svg viewBox="0 0 12 12" aria-hidden="true"><path d="M4.5 3 7.5 6l-3 3" fill="none" stroke="currentColor" stroke-width="1.3"/></svg></a></p>
       <ul class="marks" aria-label="At a glance">
         <li>NDPA 2023</li>
         <li class="m">0 cookies</li>
@@ -110,14 +114,23 @@
       <section class="feature" id="now" aria-labelledby="now-title">
         <h2 id="now-title" data-reveal>See where people in Lagos actually go</h2>
         <figure class="feature__media" data-reveal>
-          <div class="shot">
-            <div class="map" aria-hidden="true">
-              <i class="road road--a"></i><i class="road road--b"></i><i class="road road--c"></i><i class="road road--d"></i>
-              <div class="place place--a"><span>Yaba <em>· food</em></span></div>
-              <div class="place place--b"><span>Ikeja <em>· live music</em></span></div>
-              <div class="place place--c"><span>Victoria Island <em>· art</em></span></div>
-              <div class="place place--d"><span>Lekki <em>· beach</em></span></div>
-              <div class="place place--e"><span>Surulere <em>· football</em></span></div>
+          <div class="shot shot--panel">
+            <div class="win" aria-hidden="true">
+              <div class="win__bar"><i></i><i></i><i></i><b>NOW</b><span class="win__search">Search places in Lagos</span></div>
+              <div class="win__body map">
+                <i class="road road--a"></i><i class="road road--b"></i><i class="road road--c"></i><i class="road road--d"></i>
+                <div class="place place--a"><span>Yaba <em>· food</em></span></div>
+                <div class="place place--b"><span>Ikeja <em>· live music</em></span></div>
+                <div class="place place--c"><span>Victoria Island <em>· art</em></span></div>
+                <div class="place place--d"><span>Lekki <em>· beach</em></span></div>
+              </div>
+            </div>
+            <div class="phone" aria-hidden="true">
+              <p class="phone__title">Near you</p>
+              <div class="post"><i class="av"></i><div><b>Yaba</b><span>food</span></div><em>Worth it</em></div>
+              <div class="post"><i class="av av--2"></i><div><b>Lekki</b><span>beach</span></div><em>Worth it</em></div>
+              <div class="post"><i class="av av--3"></i><div><b>Ikeja</b><span>live music</span></div><em class="meh">Skip</em></div>
+              <div class="post"><i class="av"></i><div><b>Victoria Island</b><span>art</span></div><em>Worth it</em></div>
             </div>
             <figcaption class="shot__caption">Illustration of NOW, not a screenshot</figcaption>
           </div>
@@ -138,15 +151,27 @@
       <section class="feature feature--flip" id="shiftos" aria-labelledby="shiftos-title">
         <h2 id="shiftos-title" data-reveal>Run every shift from one schedule</h2>
         <figure class="feature__media" data-reveal>
-          <div class="shot">
-            <div class="rota" aria-hidden="true">
-              <span></span><span class="day">Mon</span><span class="day">Tue</span><span class="day">Wed</span><span class="day">Thu</span><span class="day">Fri</span><span class="day">Sat</span><span class="day">Sun</span>
-              <span>Front desk</span><b class="am"></b><b class="am"></b><b class="pm"></b><b class="am"></b><b class="leave"></b><b class="pm"></b><b></b>
-              <span>Kitchen</span><b class="pm"></b><b></b><b class="am"></b><b class="am"></b><b class="pm"></b><b class="am"></b><b class="am"></b>
-              <span>Security</span><b class="am"></b><b class="pm"></b><b class="pm"></b><b></b><b class="am"></b><b class="am"></b><b class="pm"></b>
-              <span>Cleaning</span><b></b><b class="am"></b><b class="leave"></b><b class="leave"></b><b class="am"></b><b class="pm"></b><b class="am"></b>
+          <div class="shot shot--panel">
+            <div class="win win--wide" aria-hidden="true">
+              <div class="win__bar"><i></i><i></i><i></i><b>ShiftOS</b><span class="win__search">This week</span></div>
+              <div class="win__body win__split">
+                <ul class="side"><li class="on">Rota</li><li>Attendance</li><li>Leave</li><li>Team</li></ul>
+                <div class="rota">
+                  <span></span><span class="day">Mon</span><span class="day">Tue</span><span class="day">Wed</span><span class="day">Thu</span><span class="day">Fri</span><span class="day">Sat</span><span class="day">Sun</span>
+                  <span>Front desk</span><b class="am"></b><b class="am"></b><b class="pm"></b><b class="am"></b><b class="leave"></b><b class="pm"></b><b></b>
+                  <span>Kitchen</span><b class="pm"></b><b></b><b class="am"></b><b class="am"></b><b class="pm"></b><b class="am"></b><b class="am"></b>
+                  <span>Security</span><b class="am"></b><b class="pm"></b><b class="pm"></b><b></b><b class="am"></b><b class="am"></b><b class="pm"></b>
+                  <span>Cleaning</span><b></b><b class="am"></b><b class="leave"></b><b class="leave"></b><b class="am"></b><b class="pm"></b><b class="am"></b>
+                </div>
+              </div>
             </div>
-            <p class="legend" aria-hidden="true"><span><i></i>Morning</span><span><i class="pm"></i>Evening</span><span><i class="leave"></i>Leave</span></p>
+            <div class="phone" aria-hidden="true">
+              <p class="phone__title">My shifts</p>
+              <div class="post"><i class="sq"></i><div><b>Mon</b><span>Morning · Front desk</span></div></div>
+              <div class="post"><i class="sq"></i><div><b>Tue</b><span>Morning · Front desk</span></div></div>
+              <div class="post"><i class="sq sq--pm"></i><div><b>Wed</b><span>Evening · Front desk</span></div></div>
+              <div class="post"><i class="sq sq--leave"></i><div><b>Fri</b><span>Leave approved</span></div></div>
+            </div>
             <figcaption class="shot__caption">Illustration of ShiftOS, not a screenshot</figcaption>
           </div>
         </figure>
