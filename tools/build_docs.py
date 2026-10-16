@@ -25,14 +25,15 @@ HEAD = """<!doctype html>
   <meta property="og:url" content="https://www.undeify.com/{name}">
   <meta property="og:title" content="{title} | Undeify">
   <meta property="og:description" content="{desc}">
-  <meta property="og:image" content="https://www.undeify.com/assets/og-image.png">
+  <meta property="og:image" content="https://www.undeify.com/assets/og-image.jpg">
+  <meta property="og:image:type" content="image/jpeg">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
   <meta property="og:image:alt" content="The Undeify logo, a copper U holding a white dot, above the words Building what’s next.">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="{title} | Undeify">
   <meta name="twitter:description" content="{desc}">
-  <meta name="twitter:image" content="https://www.undeify.com/assets/og-image.png">
+  <meta name="twitter:image" content="https://www.undeify.com/assets/og-image.jpg">
   <link rel="icon" href="favicon.ico" sizes="48x48">
   <link rel="icon" href="assets/favicon-32.png" type="image/png" sizes="32x32">
   <link rel="apple-touch-icon" href="assets/apple-touch-icon.png">

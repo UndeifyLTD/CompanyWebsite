@@ -17,7 +17,7 @@ mask = mask.filter(ImageFilter.GaussianBlur(40)).resize(small.size, Image.LANCZO
 card = Image.new("RGB", (1200, 630), bg)
 content_cx, content_cy = 630 * s, 668 * s   # middle of the mark, wordmark and rule
 card.paste(small, (round(600 - content_cx), round(315 - content_cy)), mask)
-card.save(f"{out}/og-image.png", optimize=True)
+card.save(f"{out}/og-image.jpg", quality=82, optimize=True, progressive=True)
 
 # Icons: the U mark on black, square
 side = 390
@@ -25,4 +25,3 @@ mark = im.crop((round(630.5 - side / 2), round(472 - side / 2), round(630.5 + si
 for name, size in [("apple-touch-icon.png", 180), ("icon-192.png", 192), ("icon-512.png", 512), ("favicon-32.png", 32)]:
     mark.resize((size, size), Image.LANCZOS).save(f"{out}/{name}", optimize=True)
 mark.resize((256, 256), Image.LANCZOS).save(f"{out}/favicon.ico", sizes=[(16, 16), (32, 32), (48, 48)])
-print("bg", bg)

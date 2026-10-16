@@ -18,7 +18,7 @@
       ]
     },
     {
-      "source": "/assets/og-image.png",
+      "source": "/assets/og-image.jpg",
       "headers": [
         { "key": "Cross-Origin-Resource-Policy", "value": "cross-origin" }
       ]
