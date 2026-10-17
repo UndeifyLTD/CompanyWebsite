@@ -46,8 +46,14 @@
     clearCookies();
   };
 
-  const open = () => {
-    if (banner) return banner.querySelector('button').focus();
+  const open = (focus = false) => {
+    if (banner) {
+      if (focus) {
+        banner.scrollIntoView({ block: 'start' });
+        banner.querySelector('button').focus();
+      }
+      return;
+    }
     banner = document.createElement('section');
     banner.className = 'consent';
     banner.setAttribute('aria-label', 'Cookie choice');
@@ -61,11 +67,17 @@
       const b = e.target.closest('[data-choice]');
       if (b) choose(b.dataset.choice);
     });
-    document.body.append(banner);
+    const header = document.querySelector('.header');
+    if (header) header.after(banner);
+    else document.body.prepend(banner);
+    if (focus) {
+      banner.scrollIntoView({ block: 'start' });
+      banner.querySelector('button').focus();
+    }
   };
 
   const start = () => {
-    for (const b of document.querySelectorAll('[data-consent-open]')) b.addEventListener('click', open);
+    for (const b of document.querySelectorAll('[data-consent-open]')) b.addEventListener('click', () => open(true));
     const v = read();
     if (v === 'granted') load();
     else if (v !== 'denied') open();
