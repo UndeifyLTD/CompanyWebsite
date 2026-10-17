@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Undeify: our own software, built in Nigeria</title>
   <meta name="description" content="Undeify is a Nigerian software company. We design, build and run our own products, like ShiftOS and NOW, for businesses and everyday people in Nigeria.">
-  <meta name="theme-color" content="#fafafa">
+  <meta name="theme-color" content="#f4f1e8">
   <link rel="canonical" href="https://www.undeify.com/">
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="Undeify">
@@ -26,6 +26,7 @@
   <link rel="icon" href="assets/favicon-32.png" type="image/png" sizes="32x32">
   <link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
   <link rel="manifest" href="site.webmanifest">
+  <link rel="preload" href="assets/fonts/BricolageGrotesque-Variable.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="assets/fonts/Geist-Variable.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="stylesheet" href="assets/site.css">
   <script>document.documentElement.classList.add('js')</script>
@@ -41,30 +42,12 @@
         Undeify
       </a>
       <nav class="nav" aria-label="Main">
-        <div class="nav__item">
-          <a class="nav__link" href="./#now" aria-haspopup="true">Products <svg viewBox="0 0 12 12" aria-hidden="true"><path d="M3 4.5 6 7.5l3-3" fill="none" stroke="currentColor" stroke-width="1.3"/></svg></a>
-          <div class="drop">
-            <p class="drop__title">Products</p>
-            <a href="./#now"><span class="ico"><svg viewBox="0 0 16 16" aria-hidden="true"><circle cx="8" cy="7" r="2.2" fill="none" stroke="#171717" stroke-width="1.3"/><path d="M8 14s4.5-4.2 4.5-7.2a4.5 4.5 0 0 0-9 0C3.5 9.8 8 14 8 14Z" fill="none" stroke="#171717" stroke-width="1.3"/></svg></span><b>NOW</b><span>A social map of places, starting in Lagos</span></a>
-            <a href="./#shiftos"><span class="ico"><svg viewBox="0 0 16 16" aria-hidden="true"><rect x="2" y="3" width="12" height="11" rx="2" fill="none" stroke="#171717" stroke-width="1.3"/><path d="M2 6.5h12M5.5 1.5v3M10.5 1.5v3" stroke="#171717" stroke-width="1.3"/></svg></span><b>ShiftOS</b><span>Scheduling and operations for shift teams</span></a>
-            <a href="about.html#research"><span class="ico"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M3 3.5h10M3 7h10M3 10.5h6" stroke="#171717" stroke-width="1.3"/></svg></span><b>In research</b><span>Learning Yorùbá, for families abroad</span></a>
-          </div>
-        </div>
-        <div class="nav__item">
-          <a class="nav__link" href="about.html" aria-haspopup="true">Company <svg viewBox="0 0 12 12" aria-hidden="true"><path d="M3 4.5 6 7.5l3-3" fill="none" stroke="currentColor" stroke-width="1.3"/></svg></a>
-          <div class="drop">
-            <p class="drop__title">Company</p>
-            <a href="about.html"><span class="ico"><svg viewBox="0 0 16 16" aria-hidden="true"><circle cx="8" cy="5.5" r="2.5" fill="none" stroke="#171717" stroke-width="1.3"/><path d="M3 14c.6-2.8 2.6-4.3 5-4.3s4.4 1.5 5 4.3" fill="none" stroke="#171717" stroke-width="1.3"/></svg></span><b>About</b><span>Who we are and how we work</span></a>
-            <a href="security.html"><span class="ico"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M8 1.8 13 3.6v4.1c0 3.1-2.1 5.4-5 6.5-2.9-1.1-5-3.4-5-6.5V3.6Z" fill="none" stroke="#171717" stroke-width="1.3"/></svg></span><b>Security</b><span>How to report a problem to us</span></a>
-            <a href="privacy.html"><span class="ico"><svg viewBox="0 0 16 16" aria-hidden="true"><rect x="3" y="7" width="10" height="7" rx="1.5" fill="none" stroke="#171717" stroke-width="1.3"/><path d="M5.5 7V5a2.5 2.5 0 0 1 5 0v2" fill="none" stroke="#171717" stroke-width="1.3"/></svg></span><b>Privacy</b><span>What this site collects and why</span></a>
-          </div>
-        </div>
+        <a class="nav__link" href="./#products">Products</a>
+        <a class="nav__link" href="./#security">Security</a>
         <a class="nav__link" href="./#shipped">Shipped</a>
-        <a class="nav__link" href="mailto:hello@undeify.com">Contact</a>
+        <a class="nav__link" href="about.html">About</a>
       </nav>
       <div class="header__actions">
-        <a class="btn btn--light btn--sm" href="about.html">About</a>
-        <a class="btn btn--light btn--sm" href="security.html">Report an issue</a>
         <a class="btn btn--dark btn--sm" href="mailto:hello@undeify.com?subject=Hello%20Undeify">Email us</a>
       </div>
       <button class="burger" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="mmenu"><i></i></button>
@@ -79,177 +62,160 @@
 
   <main id="main">
     <section class="hero wrap" aria-labelledby="hero-title">
-      <div class="hero__body">
-        <div class="hero__copy">
-  <p class="recap"><a href="about.html">Built in Nigeria <svg viewBox="0 0 12 12" aria-hidden="true"><path d="M4.5 3 7.5 6l-3 3" fill="none" stroke="currentColor" stroke-width="1.3"/></svg></a></p>
-          <h1 id="hero-title">Our Own Software</h1>
-          <p class="typed" data-typed="for businesses in Nigeria.|for everyday people.|secure from the first line.|built by its founders.">for businesses in Nigeria.</p>
-          <div class="hero__actions">
-            <a class="btn btn--dark" href="mailto:hello@undeify.com?subject=Hello%20Undeify">Email us</a>
-            <a class="btn btn--light" href="#now">See products</a>
-          </div>
+      <div class="hero__copy">
+        <p class="eyebrow">Software company · Nigeria <span class="sticker">Lagos first</span></p>
+        <h1 id="hero-title">Our own software, built <mark>here.</mark></h1>
+        <p class="hero__lede">We design, build and run our own products for businesses and everyday people in Nigeria. Secure from the first line, built by its founders.</p>
+        <div class="hero__actions">
+          <a class="btn btn--dark btn--lg" href="mailto:hello@undeify.com?subject=Hello%20Undeify">Email us</a>
+          <a class="btn btn--line btn--lg" href="#products">See products</a>
         </div>
-        <nav class="hero__side" aria-label="Products">
-          <a href="#now">NOW</a>
-          <a href="#shiftos">ShiftOS</a>
-          <a href="#security">Security</a>
-        </nav>
       </div>
-      <ul class="marks" aria-label="At a glance">
-        <li>NDPA 2023</li>
-        <li class="m">Opt-in cookies</li>
-        <li>No ad tracking</li>
-        <li class="m">security.txt</li>
-        <li>Lagos first</li>
-        <li class="m">2 founders</li>
-        <li>Built in Nigeria</li>
+      <nav class="index" aria-label="Products">
+        <a href="#now"><span class="index__n">01</span><span class="index__name">NOW</span><span class="index__status">In design</span></a>
+        <a href="#shiftos"><span class="index__n">02</span><span class="index__name">ShiftOS</span><span class="index__status">In production</span></a>
+        <a href="#research"><span class="index__n">03</span><span class="index__name">Yorùbá learning</span><span class="index__status">In research</span></a>
+      </nav>
+    </section>
+
+    <section class="band" aria-label="At a glance">
+      <ul class="band__in wrap">
+        <li>NDPA 2023</li><li>Opt-in cookies</li><li>No ad tracking</li><li>security.txt</li><li>Lagos first</li><li>2 founders</li>
       </ul>
     </section>
 
-    <div class="features wrap">
-      <section class="feature" id="now" aria-labelledby="now-title">
-        <h2 id="now-title" data-reveal>See where people in Lagos actually go</h2>
-        <figure class="feature__media" data-reveal>
-          <div class="shot shot--panel">
-            <div class="win" aria-hidden="true">
-              <div class="win__bar"><i></i><i></i><i></i><b>NOW</b><span class="win__search">Search places in Lagos</span></div>
-              <div class="win__body map">
-                <i class="road road--a"></i><i class="road road--b"></i><i class="road road--c"></i><i class="road road--d"></i>
-                <div class="place place--a"><span>Yaba <em>· food</em></span></div>
-                <div class="place place--b"><span>Ikeja <em>· live music</em></span></div>
-                <div class="place place--c"><span>Victoria Island <em>· art</em></span></div>
-                <div class="place place--d"><span>Lekki <em>· beach</em></span></div>
-              </div>
-            </div>
-            <div class="phone" aria-hidden="true">
-              <p class="phone__title">Near you</p>
-              <div class="post"><i class="av"></i><div><b>Yaba</b><span>food</span></div><em>Worth it</em></div>
-              <div class="post"><i class="av av--2"></i><div><b>Lekki</b><span>beach</span></div><em>Worth it</em></div>
-              <div class="post"><i class="av av--3"></i><div><b>Ikeja</b><span>live music</span></div><em class="meh">Skip</em></div>
-              <div class="post"><i class="av"></i><div><b>Victoria Island</b><span>art</span></div><em>Worth it</em></div>
-            </div>
-            <figcaption class="shot__caption">Illustration of NOW, not a screenshot</figcaption>
-          </div>
-        </figure>
-        <div class="feature__aside" data-reveal>
-          <p class="stat"><strong>NOW is a social map of places,</strong> starting with a private beta in Lagos.</p>
-          <ul class="flist">
-            <li>Features</li>
+    <section class="products wrap" id="products" aria-labelledby="products-title">
+      <h2 class="h2" id="products-title" data-reveal>What we are building</h2>
+
+      <article class="panel panel--gold" id="now" aria-labelledby="now-title" data-reveal>
+        <div class="panel__copy">
+          <p class="label">01 · In design</p>
+          <h3 id="now-title">See where people in Lagos actually go</h3>
+          <p class="panel__lede">NOW is a social map of places, starting with a private beta in Lagos.</p>
+          <ul class="dash">
             <li>Posts about places you have been</li>
             <li>Follow friends and see where they go</li>
             <li>Worth-it ratings from real visits</li>
             <li>A map that starts with Lagos</li>
           </ul>
-          <a class="flist__more" href="mailto:hello@undeify.com?subject=NOW%20private%20beta">Ask about the beta</a>
+          <a class="btn btn--dark" href="mailto:hello@undeify.com?subject=NOW%20private%20beta">Ask about the beta</a>
         </div>
-      </section>
-
-      <section class="feature feature--flip" id="shiftos" aria-labelledby="shiftos-title">
-        <h2 id="shiftos-title" data-reveal>Run every shift from one schedule</h2>
-        <figure class="feature__media" data-reveal>
-          <div class="shot shot--panel">
-            <div class="win win--wide" aria-hidden="true">
-              <div class="win__bar"><i></i><i></i><i></i><b>ShiftOS</b><span class="win__search">This week</span></div>
-              <div class="win__body win__split">
-                <ul class="side"><li class="on">Rota</li><li>Attendance</li><li>Leave</li><li>Team</li></ul>
-                <div class="rota">
-                  <span></span><span class="day">Mon</span><span class="day">Tue</span><span class="day">Wed</span><span class="day">Thu</span><span class="day">Fri</span><span class="day">Sat</span><span class="day">Sun</span>
-                  <span>Front desk</span><b class="am"></b><b class="am"></b><b class="pm"></b><b class="am"></b><b class="leave"></b><b class="pm"></b><b></b>
-                  <span>Kitchen</span><b class="pm"></b><b></b><b class="am"></b><b class="am"></b><b class="pm"></b><b class="am"></b><b class="am"></b>
-                  <span>Security</span><b class="am"></b><b class="pm"></b><b class="pm"></b><b></b><b class="am"></b><b class="am"></b><b class="pm"></b>
-                  <span>Cleaning</span><b></b><b class="am"></b><b class="leave"></b><b class="leave"></b><b class="am"></b><b class="pm"></b><b class="am"></b>
-                </div>
-              </div>
+        <figure class="panel__media">
+          <div class="mock mock--tilt-l" aria-hidden="true">
+            <div class="nowmap">
+              <i class="road road--a"></i><i class="road road--b"></i>
+              <span class="pin pin--a">Yaba</span><span class="pin pin--b">Ikeja</span><span class="pin pin--c">Victoria Island</span><span class="pin pin--d">Lekki</span>
             </div>
-            <div class="phone" aria-hidden="true">
-              <p class="phone__title">My shifts</p>
-              <div class="post"><i class="sq"></i><div><b>Mon</b><span>Morning · Front desk</span></div></div>
-              <div class="post"><i class="sq"></i><div><b>Tue</b><span>Morning · Front desk</span></div></div>
-              <div class="post"><i class="sq sq--pm"></i><div><b>Wed</b><span>Evening · Front desk</span></div></div>
-              <div class="post"><i class="sq sq--leave"></i><div><b>Fri</b><span>Leave approved</span></div></div>
+            <div class="posts">
+              <p class="mono">Near you</p>
+              <div class="post"><div><b>Yaba</b><span>food</span></div><em>Worth it</em></div>
+              <div class="post"><div><b>Lekki</b><span>beach</span></div><em>Worth it</em></div>
+              <div class="post"><div><b>Ikeja</b><span>live music</span></div><em class="meh">Skip</em></div>
+              <div class="post"><div><b>Victoria Island</b><span>art</span></div><em>Worth it</em></div>
             </div>
-            <figcaption class="shot__caption">Illustration of ShiftOS, not a screenshot</figcaption>
           </div>
+          <figcaption>Illustration of NOW, not a screenshot</figcaption>
         </figure>
-        <div class="feature__aside" data-reveal>
-          <p class="stat"><strong>ShiftOS runs in production</strong> for teams that work in shifts.</p>
-          <ul class="flist">
-            <li>Features</li>
+      </article>
+
+      <article class="panel panel--green panel--flip" id="shiftos" aria-labelledby="shiftos-title" data-reveal>
+        <div class="panel__copy">
+          <p class="label">02 · In production</p>
+          <h3 id="shiftos-title">Run every shift from one schedule</h3>
+          <p class="panel__lede">ShiftOS runs in production for teams that work in shifts.</p>
+          <ul class="dash">
             <li>Shift scheduling and rotas</li>
             <li>Attendance</li>
             <li>Leave requests</li>
             <li>Roles for managers, supervisors and staff</li>
           </ul>
-          <a class="flist__more" href="mailto:hello@undeify.com?subject=ShiftOS">Ask about ShiftOS</a>
+          <a class="btn btn--paper" href="mailto:hello@undeify.com?subject=ShiftOS">Ask about ShiftOS</a>
         </div>
-      </section>
-
-      <section class="feature" id="security" aria-labelledby="security-title">
-        <h2 id="security-title" data-reveal>Security built in, not bolted on</h2>
-        <figure class="feature__media" data-reveal>
-          <div class="shot">
-            <div class="files">
-              <div class="file">
-                <p class="file__bar"><i></i><i></i><i></i>/.well-known/security.txt</p>
-<pre><span class="k">Contact:</span> mailto:hello@undeify.com
-<span class="k">Expires:</span> 2027-10-16T00:00:00.000Z
-<span class="k">Preferred-Languages:</span> en
-<span class="k">Canonical:</span> https://www.undeify.com/.well-known/security.txt
-<span class="k">Policy:</span> https://www.undeify.com/security.html</pre>
-              </div>
-              <div class="file file--headers">
-                <p class="file__bar"><i></i><i></i><i></i>Response headers</p>
-<pre><span class="k">content-security-policy:</span> default-src 'self'; frame-ancestors 'none'; object-src 'none'
-<span class="k">strict-transport-security:</span> max-age=63072000; includeSubDomains
-<span class="k">x-content-type-options:</span> nosniff
-<span class="k">referrer-policy:</span> strict-origin-when-cross-origin
-<span class="k">x-frame-options:</span> DENY</pre>
-              </div>
+        <figure class="panel__media">
+          <div class="mock mock--tilt-r" aria-hidden="true">
+            <div class="rota">
+              <span></span><span class="day">Mon</span><span class="day">Tue</span><span class="day">Wed</span><span class="day">Thu</span><span class="day">Fri</span><span class="day">Sat</span><span class="day">Sun</span>
+              <span>Front desk</span><b class="am"></b><b class="am"></b><b class="pm"></b><b class="am"></b><b class="leave"></b><b class="pm"></b><b></b>
+              <span>Kitchen</span><b class="pm"></b><b></b><b class="am"></b><b class="am"></b><b class="pm"></b><b class="am"></b><b class="am"></b>
+              <span>Security</span><b class="am"></b><b class="pm"></b><b class="pm"></b><b></b><b class="am"></b><b class="am"></b><b class="pm"></b>
+              <span>Cleaning</span><b></b><b class="am"></b><b class="leave"></b><b class="leave"></b><b class="am"></b><b class="pm"></b><b class="am"></b>
             </div>
-            <figcaption class="shot__caption">This website's real files</figcaption>
+            <p class="legend"><span><i class="am"></i>Morning</span><span><i class="pm"></i>Evening</span><span><i class="leave"></i>Leave</span></p>
           </div>
+          <figcaption>Illustration of ShiftOS, not a screenshot</figcaption>
         </figure>
-        <div class="feature__aside" data-reveal>
-          <p class="stat"><strong>No cookies until you say yes.</strong> Visits are counted without cookies; Google Analytics loads only with your consent, and never for advertising.</p>
-          <ul class="flist">
-            <li>Features</li>
+      </article>
+
+      <article class="panel panel--dashed" id="research" aria-labelledby="research-title" data-reveal>
+        <div>
+          <p class="label">03 · In research</p>
+          <h3 id="research-title">Learning Yorùbá, for families abroad</h3>
+        </div>
+        <a class="btn btn--line" href="about.html#research">Read more</a>
+      </article>
+    </section>
+
+    <section class="security" id="security" aria-labelledby="security-title">
+      <div class="security__in wrap">
+        <div class="security__copy" data-reveal>
+          <p class="label">How we build</p>
+          <h2 class="h2" id="security-title">Security built in, not bolted on</h2>
+          <p class="security__lede"><strong>No cookies until you say yes.</strong> Visits are counted without cookies; Google Analytics loads only with your consent, and never for advertising.</p>
+          <ul class="dash">
             <li>Abuse cases reviewed before release</li>
             <li>Secrets kept out of code</li>
             <li>Least-privilege access</li>
             <li>Designed for the NDPA 2023</li>
           </ul>
-          <a class="flist__more" href="security.html">Report a problem</a>
+          <a class="btn btn--gold" href="security.html">Report a problem</a>
         </div>
-      </section>
-    </div>
+        <figure class="files" data-reveal>
+          <div class="file">
+            <p class="file__bar">/.well-known/security.txt</p>
+<pre><span class="k">Contact:</span> mailto:hello@undeify.com
+<span class="k">Expires:</span> 2027-10-16T00:00:00.000Z
+<span class="k">Preferred-Languages:</span> en
+<span class="k">Canonical:</span> https://www.undeify.com/.well-known/security.txt
+<span class="k">Policy:</span> https://www.undeify.com/security.html</pre>
+          </div>
+          <div class="file">
+            <p class="file__bar">Response headers</p>
+<pre><span class="k">content-security-policy:</span> default-src 'self'; frame-ancestors 'none'; object-src 'none'
+<span class="k">strict-transport-security:</span> max-age=63072000; includeSubDomains
+<span class="k">x-content-type-options:</span> nosniff
+<span class="k">referrer-policy:</span> strict-origin-when-cross-origin
+<span class="k">x-frame-options:</span> DENY</pre>
+          </div>
+          <figcaption>This website's real files</figcaption>
+        </figure>
+      </div>
+    </section>
 
     <section class="shipped wrap" id="shipped" aria-labelledby="shipped-title">
-      <h2 id="shipped-title" data-reveal>Recently shipped</h2>
-      <div class="bento">
-        <article class="tile tile--big" data-reveal>
-          <div class="tile__art" aria-hidden="true">
-            <ul class="big-list"><li>Sign-in and invitations</li><li>Database roles</li><li>Access rules</li><li>Leave data</li></ul>
-            <p class="big-num">36</p>
-          </div>
-          <div class="tile__head"><h3>ShiftOS production audit</h3><p>A 36-section production-readiness review of ShiftOS, with the critical fixes merged.</p></div>
+      <h2 class="h2" id="shipped-title" data-reveal>Recently shipped</h2>
+      <div class="cards">
+        <article class="card" data-reveal>
+          <p class="card__fig">36</p>
+          <h3>ShiftOS production audit</h3>
+          <p>A 36-section production-readiness review of ShiftOS, with the critical fixes merged.</p>
         </article>
-        <a class="tile" href="privacy.html" data-reveal>
-          <div class="tile__art" aria-hidden="true"><div class="code-card"><b>cookies</b>: only if you accept<br><b>ad trackers</b>: 0<br><b>google analytics</b>: opt-in</div></div>
-          <div class="tile__head"><h3>This website</h3><p>Opt-in cookies, no ad tracking, strict security headers.</p></div>
+        <a class="card" href="privacy.html" data-reveal>
+          <p class="card__fig">0</p>
+          <h3>This website</h3>
+          <p>Opt-in cookies, no ad tracking, strict security headers.</p>
         </a>
-        <a class="tile" href=".well-known/security.txt" data-reveal>
-          <div class="tile__art" aria-hidden="true"><div class="code-card"><b>Contact:</b> mailto:hello@undeify.com<br><b>Policy:</b> /security.html</div></div>
-          <div class="tile__head"><h3>security.txt</h3><p>A public, standard way to report a security problem to us.</p></div>
+        <a class="card" href=".well-known/security.txt" data-reveal>
+          <p class="card__fig card__fig--mono">security.txt</p>
+          <h3>A public way to report</h3>
+          <p>A public, standard way to report a security problem to us.</p>
         </a>
       </div>
     </section>
 
     <section class="closing wrap" aria-labelledby="closing-title">
-      <h2 id="closing-title" data-reveal>Built in Nigeria, by its founders</h2>
-      <div class="closing__actions" data-reveal>
-        <a class="btn btn--dark" href="mailto:hello@undeify.com?subject=Hello%20Undeify">Email us</a>
-        <button class="copy" type="button" data-copy="hello@undeify.com"><span class="mono">hello@undeify.com</span><i><svg viewBox="0 0 16 16" aria-hidden="true"><rect x="5" y="5" width="9" height="9" rx="1.5" fill="none" stroke="#171717" stroke-width="1.3"/><path d="M11 5V3.5A1.5 1.5 0 0 0 9.5 2h-6A1.5 1.5 0 0 0 2 3.5v6A1.5 1.5 0 0 0 3.5 11H5" fill="none" stroke="#171717" stroke-width="1.3"/></svg></i><span class="sr-only">Copy email address</span></button>
-      </div>
+      <h2 class="label" id="closing-title" data-reveal>Built in Nigeria, by its founders</h2>
+      <a class="closing__mail" href="mailto:hello@undeify.com?subject=Hello%20Undeify" data-reveal>hello@undeify.com <span aria-hidden="true">→</span></a>
+      <button class="copy" type="button" data-copy="hello@undeify.com" data-reveal><span>Copy email address</span></button>
     </section>
   </main>
 
@@ -261,12 +227,13 @@
         <nav aria-labelledby="f2"><h2 id="f2">Company</h2><ul><li><a href="about.html">About</a></li><li><a href="./#shipped">Shipped</a></li><li><a href="mailto:hello@undeify.com">Contact</a></li></ul></nav>
         <nav aria-labelledby="f3"><h2 id="f3">Security</h2><ul><li><a href="security.html">Report a problem</a></li><li><a href=".well-known/security.txt">security.txt</a></li><li><a href="./#security">How we build</a></li></ul></nav>
         <nav aria-labelledby="f4"><h2 id="f4">Legal</h2><ul><li><a href="privacy.html">Privacy notice</a></li><li><a href="terms.html">Terms of use</a></li><li><button type="button" data-consent-open>Cookie settings</button></li></ul></nav>
-        <div><h2>Contact</h2><ul><li><a href="mailto:hello@undeify.com">hello@undeify.com</a></li></ul></div>
-        <div><h2>Location</h2><ul><li><span>Nigeria</span></li></ul></div>
       </div>
       <div class="footer__bottom">
-        <a class="brand" href="./" aria-label="Undeify, home"><svg viewBox="0 0 32 32" aria-hidden="true"><rect width="32" height="32" rx="7" fill="#171717"/><path d="M8.55 6.5v9.7a7.45 7.45 0 0 0 14.9 0V6.5" fill="none" stroke="#b7663a" stroke-width="3.75"/><circle cx="16" cy="16.35" r="3.35" fill="#e8e4dc"/></svg>Undeify</a>
-        <span>© 2026 Undeify. No ad tracking.</span>
+        <a class="brand" href="./" aria-label="Undeify, home">
+        <svg viewBox="0 0 32 32" aria-hidden="true"><rect width="32" height="32" rx="7" fill="#171717"/><path d="M8.55 6.5v9.7a7.45 7.45 0 0 0 14.9 0V6.5" fill="none" stroke="#b7663a" stroke-width="3.75"/><circle cx="16" cy="16.35" r="3.35" fill="#e8e4dc"/></svg>
+        Undeify
+      </a>
+        <span>© 2026 Undeify, Nigeria. No ad tracking.</span>
       </div>
     </div>
   </footer>

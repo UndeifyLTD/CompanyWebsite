@@ -1,4 +1,4 @@
-// Undeify website: phone menu, the typed line, copy-email, reveal-on-entry.
+// Undeify website: phone menu, copy-email, reveal-on-entry.
 (() => {
   const still = matchMedia('(prefers-reduced-motion: reduce)').matches;
 
@@ -10,21 +10,6 @@
     burger.addEventListener('click', () => set(burger.getAttribute('aria-expanded') !== 'true'));
     menu.addEventListener('click', (e) => { if (e.target.closest('a')) set(false); });
     addEventListener('keydown', (e) => { if (e.key === 'Escape') set(false); });
-  }
-
-  // The typed line under the headline cycles through its phrases.
-  const typed = document.querySelector('[data-typed]');
-  if (typed && !still) {
-    const words = typed.dataset.typed.split('|');
-    let w = 0, n = words[0].length, dir = -1;
-    const tick = () => {
-      n += dir;
-      typed.textContent = words[w].slice(0, n);
-      if (dir < 0 && n === 0) { w = (w + 1) % words.length; dir = 1; return setTimeout(tick, 300); }
-      if (dir > 0 && n === words[w].length) { dir = -1; return setTimeout(tick, 2200); }
-      setTimeout(tick, dir < 0 ? 28 : 55);
-    };
-    setTimeout(tick, 2600);
   }
 
   // Copy the email address

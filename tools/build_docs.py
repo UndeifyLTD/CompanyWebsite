@@ -17,7 +17,7 @@ HEAD = """<!doctype html>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>{title} | Undeify</title>
   <meta name="description" content="{desc}">
-  <meta name="theme-color" content="#fafafa">
+  <meta name="theme-color" content="#f4f1e8">
   <link rel="canonical" href="https://www.undeify.com/{name}">
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="Undeify">

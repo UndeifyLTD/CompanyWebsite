@@ -1,4 +1,6 @@
-# DESIGN.md: Vercel's design language, adapted for Undeify
+# DESIGN.md: Vercel's design language, adapted for Undeify (v1, superseded)
+
+> **Superseded on 2026-10-17 (proposal W15 in `docs/decisions.md`).** The site now has its own look, documented in `docs/tokens.md`. This file records how v1 was built and is kept for history; do not follow it for new work.
 
 ## Source
 - URL: https://vercel.com (home page)
