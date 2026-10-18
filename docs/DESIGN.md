@@ -46,7 +46,7 @@ Quiet, light, precise. An off-white page, near-black text, one sans-serif with t
 - **Header:** mark at the left, 3–4 plain links, then a white pill and a black pill at the right. Phone: mark plus a menu icon.
 - **Buttons:** 40px tall pills, 12px side padding, weight 500. Primary black with white text; secondary white with a 1px #ebebeb ring.
 - **Eyebrow pill:** small monospace uppercase text in a white pill with a border, with a chevron.
-- **Hero:** heading and buttons on the left, a short list of product links on the right; a strip of facts below. There is no 3D object.
+- **Hero:** centered heading, buttons and "Built in Nigeria" pill, followed by a strip of facts. There is no 3D object or separate product-link list.
 - **Feature section:** big heading top-left; a framed card holding a product visual; on wide layouts, the alternating visual and supporting copy use balanced columns. At tablet widths they stack; the copy stays close to its visual.
 - **Bento grid:** cards with 1px borders on a white ground, each with a title, one line and a visual.
 - **Closing call to action:** centred heading, one black pill.
@@ -62,7 +62,7 @@ Short declarative headings (5–8 words), sentence case. CTAs are verbs ("Deploy
 ## How Undeify uses it (agent build instructions)
 1. Tokens as above, as custom properties in `site/assets/site.css`. Fonts self-hosted.
 2. Our own mark (a black U) and wordmark. Never a triangle.
-3. Hero: our own headline and buttons, with product links on the right and no 3D object.
+3. Hero: our own centered headline, buttons and "Built in Nigeria" pill, with no separate product-link list or 3D object.
 4. The logo strip becomes a strip of true facts (we have no customer logos and won't fake them).
 5. Feature sections for NOW and ShiftOS. Their visuals are simple diagrams drawn in HTML and CSS, labelled as illustrations, until real screenshots exist. Feature lists only name things the products really do or plan.
 6. The bento grid holds how we work: security, Nigerian law, own products, size, plus the product in research.
