@@ -46,7 +46,7 @@ Quiet, light, precise. An off-white page, near-black text, one sans-serif with t
 - **Header:** mark at the left, 3–4 plain links, then a white pill and a black pill at the right. Phone: mark plus a menu icon.
 - **Buttons:** 40px tall pills, 12px side padding, weight 500. Primary black with white text; secondary white with a 1px #ebebeb ring.
 - **Eyebrow pill:** small monospace uppercase text in a white pill with a border, with a chevron.
-- **Hero:** centered heading, buttons and "Built in Nigeria" pill, followed by a strip of facts. There is no 3D object or separate product-link list.
+- **Hero:** centered heading, buttons and "Built in Nigeria" pill in a compact first screen, followed by a close-set strip of facts. There is no 3D object or separate product-link list.
 - **Feature section:** big heading top-left; a framed card holding a product visual; on wide layouts, the alternating visual and supporting copy use balanced columns. At tablet widths they stack; the copy stays close to its visual.
 - **Bento grid:** cards with 1px borders on a white ground, each with a title, one line and a visual.
 - **Closing call to action:** centred heading, one black pill.
