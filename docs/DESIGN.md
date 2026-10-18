@@ -16,13 +16,14 @@ Use the self-hosted Geist family already in `site/assets/fonts/`. Heavy, tightly
 
 ## Components and page structure
 
-- **Header:** compact sticky navigation on warm paper, fine rule, black wordmark, simple rectangular buttons. At phone widths, use the existing accessible menu.
+- **Header:** compact sticky navigation on warm paper, fine rule, black wordmark, and one clear email action. Keep page destinations in the Products and Company menus instead of repeating them as header buttons. At phone widths, use the existing accessible menu and keep every page destination available.
 - **Hero:** very large headline and existing calls to action. CSS-only abstract shapes provide a lively backdrop without competing with the words. Keep the product links and facts visible.
 - **Product sections:** retain the approved section order and all existing copy. Give diagrams stronger editorial color-block composition, with their existing illustration captions.
 - **Recently shipped:** keep the existing approved cards, using fine dark outlines, geometric accents, and strong type hierarchy.
 - **Documents:** use the same paper background, display headings, fine rules, and body typography; prioritize legibility over decoration.
 - **Consent:** keep the existing opt-in choices and privacy link accessible and visible without obscuring page content.
 - **Footer:** preserve the existing sitemap and legal links.
+- **Facts row:** keep every approved fact visible without requiring horizontal scrolling on phones.
 
 ## Behavior and accessibility
 

@@ -56,10 +56,10 @@ img, svg { display: block; max-width: 100%; }
 
 /* ---------- header ---------- */
 .header { position: sticky; top: 0; z-index: 30; height: var(--header); background: var(--bg); box-shadow: 0 1px 0 var(--line); }
-.header__in { height: 100%; display: flex; align-items: center; padding-inline: 16px 24px; max-width: calc(var(--max) + 48px); margin-inline: auto; }
+.header__in { height: 100%; display: flex; align-items: center; padding-inline: var(--margin); max-width: calc(var(--max) + var(--margin) * 2); margin-inline: auto; }
 .brand { display: inline-flex; align-items: center; gap: 8px; height: 34px; font-weight: 600; font-size: 18px; letter-spacing: -0.04em; }
 .brand svg { width: 22px; height: 22px; }
-.nav { display: flex; align-items: center; margin-left: 12px; }
+.nav { display: flex; align-items: center; margin-left: var(--margin); }
 .nav__item { position: relative; }
 .nav__link { display: inline-flex; align-items: center; gap: 4px; height: 32px; padding: 0 12px; border-radius: 999px; font-size: 14px; line-height: 20px; color: var(--ink-2); transition: color 150ms ease, background-color 150ms ease; }
 .nav__link svg { width: 12px; height: 12px; transition: transform 200ms ease; }
@@ -113,12 +113,12 @@ img, svg { display: block; max-width: 100%; }
 
 /* ---------- feature sections ---------- */
 .features { margin-top: 208px; }
-.feature + .feature { margin-top: 232px; }
-.feature { display: grid; grid-template-columns: 921px minmax(0, 1fr); column-gap: 24px; }
+.feature + .feature { margin-top: 192px; }
+.feature { display: grid; grid-template-columns: minmax(0, 3fr) minmax(0, 1fr); column-gap: var(--margin); }
 .feature h2 { grid-column: 1 / -1; max-width: 921px; font-size: 56px; line-height: 56px; font-weight: 450; letter-spacing: -0.06em; text-wrap: balance; }
 .feature__media { margin-top: 44px; }
-.feature__aside { margin-top: 44px; align-self: center; justify-self: end; width: 333px; }
-.feature--flip { grid-template-columns: minmax(0, 1fr) 921px; }
+.feature__aside { margin-top: 44px; align-self: center; justify-self: end; width: 100%; max-width: 333px; }
+.feature--flip { grid-template-columns: minmax(0, 1fr) minmax(0, 3fr); }
 .feature--flip h2 { grid-column: 2; }
 .feature--flip .feature__media { grid-column: 2; grid-row: 2; }
 .feature--flip .feature__aside { grid-column: 1; grid-row: 2; justify-self: start; }
@@ -169,7 +169,7 @@ img, svg { display: block; max-width: 100%; }
 .file pre .k { color: var(--ink-3); }
 
 /* ---------- recently shipped ---------- */
-.shipped { margin-top: 232px; }
+.shipped { margin-top: 192px; }
 .shipped h2 { font-size: 56px; line-height: 56px; font-weight: 450; letter-spacing: -0.06em; }
 .bento { margin-top: 81px; display: grid; grid-template-columns: 1fr 1fr; grid-template-rows: 280px 280px; gap: 20px; }
 .tile { position: relative; overflow: hidden; border-radius: 12px; background: var(--bg); box-shadow: 0 0 0 1px var(--line); transition: background-color 200ms ease; }
@@ -186,7 +186,7 @@ a.tile:hover { background: var(--surface); }
 .code-card b { color: var(--ink); font-weight: 500; }
 
 /* ---------- closing call ---------- */
-.closing { margin-block: 276px; display: flex; flex-direction: column; align-items: center; gap: 24px; text-align: center; }
+.closing { margin-block: 192px; display: flex; flex-direction: column; align-items: center; gap: 24px; text-align: center; }
 .closing h2 { font-size: 56px; line-height: 56px; font-weight: 450; letter-spacing: -0.06em; max-width: 680px; text-wrap: balance; }
 .closing__actions { display: flex; flex-direction: column; align-items: center; gap: 12px; }
 .copy { display: inline-flex; align-items: center; gap: 10px; height: 40px; padding: 0 8px 0 16px; border-radius: 999px; background: var(--surface); box-shadow: 0 0 0 1px var(--line); font-size: 16px; font-weight: 500; }
@@ -216,8 +216,8 @@ a.tile:hover { background: var(--surface); }
   .typed::after { animation: none; }
 }
 
-/* ---------- tablet: Vercel's layout steps down below about 1180px ---------- */
-@container page (max-width: 1180px) {
+/* ---------- tablet ---------- */
+@container page (max-width: 1000px) {
   .hero__body { grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); }
   .hero__side { display: none; }
   .marks { flex-wrap: wrap; justify-content: center; gap: 16px 40px; }
@@ -231,10 +231,10 @@ a.tile:hover { background: var(--surface); }
 
 /* ---------- phone ---------- */
 @container page (max-width: 720px) {
-  .header__in { padding-inline: 16px 24px; }
+  .header__in { padding-inline: var(--margin); }
   .nav, .header__actions { display: none; }
   .burger { display: grid; }
-  .hero { min-height: 0; padding-top: 72px; }
+  .hero { min-height: 0; padding-top: 48px; }
   .typed { display: block; }
   .hero__body { display: block; text-align: center; }
   .recap { justify-content: center; margin: 0 0 8px; }
@@ -244,10 +244,9 @@ a.tile:hover { background: var(--surface); }
   .typed { margin-top: 12px; }
   .hero__actions { flex-direction: column; margin-top: 28px; }
   .hero__actions .btn { width: 100%; }
-  .marks { justify-content: flex-start; flex-wrap: nowrap; overflow-x: auto; scrollbar-width: none; gap: 36px; margin: 24px 0 0; padding: 48px 0 8px; }
-  .marks::-webkit-scrollbar { display: none; }
-  .features { margin-top: 160px; }
-  .feature + .feature { margin-top: 160px; }
+  .marks { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: var(--margin); margin: 24px 0 0; padding: 32px 0 8px; }
+  .features { margin-top: 112px; }
+  .feature + .feature { margin-top: 112px; }
   .feature h2, .shipped h2, .closing h2 { font-size: 32px; line-height: 40px; letter-spacing: -0.06em; }
   .feature__media { margin-top: 44px; }
   .shot { aspect-ratio: 342 / 273; }
@@ -262,14 +261,15 @@ a.tile:hover { background: var(--surface); }
   .file pre { padding: 10px 12px; font-size: 11px; line-height: 18px; }
   .file__bar { height: 32px; font-size: 11px; }
   .flist { margin-top: 32px; }
-  .shipped { margin-top: 160px; }
+  .shipped { margin-top: 112px; }
   .bento { margin-top: 81px; grid-template-columns: minmax(0, 1fr); grid-template-rows: 425px 191px 191px; }
   .tile--big { grid-row: auto; }
   .big-num { font-size: 140px; right: 20px; }
   .code-card { left: 20px; right: 20px; width: auto; top: 16px; padding: 10px 12px; font-size: 11px; line-height: 17px; }
   .tile__head h3 { font-size: 24px; }
-  .closing { margin-block: 212px; }
+  .closing { margin-block: 112px; }
   .footer__cols { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .mmenu .btn { height: 44px; }
 }
 
 /* ---------- document pages: about, privacy, terms, security ---------- */
@@ -443,18 +443,16 @@ a.tile:hover { background: var(--surface); }
 .consent { border-radius: 2px; box-shadow: 0 0 0 1px var(--ink); }
 
 @container page (max-width: 720px) {
-  .hero { padding-top: 48px; }
+  .hero { min-height: 0; }
   .hero__body::before { width: 72vw; left: 50%; top: 43%; transform: translate(-50%, -50%) rotate(-12deg); }
   .hero__body::after { width: 20vw; left: 72%; top: 18%; }
   .hero h1 { max-width: none; font-size: clamp(48px, 13vw, 64px); line-height: 0.88; }
   .recap a { height: 32px; font-size: 12px; }
-  .marks { padding-top: 32px; }
+  .marks { padding-top: 24px; }
   .features { margin-top: 112px; }
-  .feature + .feature { margin-top: 112px; }
   .feature h2, .shipped h2, .closing h2 { font-size: clamp(32px, 9vw, 48px); line-height: 0.98; }
   .shot { border-radius: 2px; }
-  .shipped { margin-top: 112px; }
-  .closing { margin-block: 144px; }
+  .closing { margin-block: 112px; }
   .footer { padding-top: 40px; }
 }
 
