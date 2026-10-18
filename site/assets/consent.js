@@ -67,8 +67,8 @@
       const b = e.target.closest('[data-choice]');
       if (b) choose(b.dataset.choice);
     });
-    const header = document.querySelector('.header');
-    if (header) header.after(banner);
+    const placement = document.querySelector('.hero') || document.querySelector('.header');
+    if (placement) placement.after(banner);
     else document.body.prepend(banner);
     if (focus) {
       banner.scrollIntoView({ block: 'start' });

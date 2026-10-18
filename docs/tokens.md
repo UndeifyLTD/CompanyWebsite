@@ -1,26 +1,21 @@
 # Design tokens
 
-The site's visual system. The live values are the custom properties at the top of `site/assets/site.css`; keep them in sync with this file and `docs/DESIGN.md`.
+The only colours, type and spacing the site may use. The live values are the custom properties at the top of `site/assets/site.css`; this file must match them. Where they come from: `docs/DESIGN.md`.
 
 ## Colour
 
 | Token | Value | Use |
 |-------|-------|-----|
-| `--bg` | #f1e8e4 | Warm page background |
-| `--surface` | #fbf8f5 | Cards and light panels |
-| `--fill` | #e5efeb | Quiet panel fill |
-| `--ink` | #090909 | Main text and outlines |
-| `--ink-2` | #49413d | Secondary text |
-| `--ink-3` | #756a65 | Small labels |
-| `--line` | #746963 | Fine rules and outlines |
-| `--sky` | #78c9e7 | Illustration accent |
-| `--teal` | #168e78 | Illustration accent |
-| `--coral` | #ed565a | Illustration accent |
-| `--yellow` | #ffc544 | Illustration accent |
-| `--blue` | #315fa7 | Illustration accent and focus ring |
-| `--focus` | #315fa7 | Keyboard focus ring |
+| `--bg` | #fafafa | Page background |
+| `--surface` | #ffffff | Cards, frames, white buttons |
+| `--fill` | #f2f2f2 | Subtle fills inside diagrams, hover on white buttons |
+| `--ink` | #171717 | Text, black buttons, the logo |
+| `--ink-2` | #4d4d4d | Secondary text |
+| `--ink-3` | #737373 | Small labels (4.6:1 on the background) |
+| `--line` | #ebebeb | Every border and divider, always 1px |
+| `--focus` | hsl(212 100% 48%) | Keyboard focus ring only |
 
-Use the accents in illustrations and selected section details, not as extra copy. Keep page text black or neutral. Outlines are fine 1px rules; do not add decorative drop shadows.
+No shadows except 1px rings. No colour accents.
 
 ## Type
 
@@ -28,9 +23,9 @@ Geist Sans (variable, 100–900) for everything; Geist Mono for small uppercase 
 
 | Token | Size | Use |
 |-------|------|-----|
-| `--h1` | 48–136px, weight 700, tracking -0.07em | Hero headline |
-| `--h2` | 32–72px, weight 650, tracking -0.06em | Section headings |
-| `--h3` | 24px, weight 600 | Card titles |
+| `--h1` | 32–64px, weight 400, tracking -0.06em | Hero headline |
+| `--h2` | 32–56px, weight 450, tracking -0.06em | Section headings |
+| `--h3` | 24px, weight 500 | Card titles |
 | `--lead` | 20–24px | Claims and about text |
 | `--body` | 16px | Running text, buttons |
 | `--small` | 14px | Nav, lists, footer |
@@ -40,8 +35,8 @@ Geist Sans (variable, 100–900) for everything; Geist Mono for small uppercase 
 
 - Side margin `--margin` 24px; content width `--max` 1392px.
 - Section gap `--section` 96–192px.
-- Header 64px, sticky, fine bottom rule.
-- Buttons: 40px high, outlined or ink-filled with compact corners; 32px small and 44px full-width on phones. Cards and frames use square or lightly softened corners.
+- Header 64px, sticky, 1px bottom line.
+- Buttons: 40px pills (32px small, 44px full-width on phones). Cards and frames: 12px radius.
 
 ## Breakpoints
 

@@ -1,34 +1,76 @@
-# Undeify visual direction
+# DESIGN.md: Vercel's design language, adapted for Undeify
 
-## Direction
+## Source
+- URL: https://vercel.com (home page)
+- Capture date: 2026-10-16
+- Evidence: Firecrawl `branding` and page markdown; headless Chrome screenshots at 1440px and 390px, plus computed styles of the headings, buttons, header, footer and borders. The scrape files are in `.firecrawl/` on Isaac's machine and are not committed: the screenshots contain Vercel's and its customers' artwork.
 
-An editorial, art-school poster sensibility: warm paper, giant assertive typography, fine dark rules, and a small palette of vivid colors. Layouts feel composed rather than corporate, with large type and abstract geometric artwork creating energy around the real product information.
+## What we take, and what we don't
+We take the **design language**: palette, type treatment, spacing, the grid, component shapes, section patterns. Layout and style ideas can't be owned.
 
-The user-provided reference is a mood reference, not an asset to reproduce. Do not reuse its artwork, people, wording, logos, layout, or attribution. Undeify's illustrations are original CSS and HTML abstractions: circles, cut-paper shapes, stripes, and simple diagrams. Do not invent customers, product claims, statistics, or visualized product behavior.
+We do **not** take anything Vercel owns: its wording, its logo or triangle mark, its illustrations and 3D renders, product screenshots, customer logos and statistics, or its HTML, CSS and code. Everything in `site/` is written from scratch. The one thing we reuse directly is the Geist typeface, which Vercel publishes under the SIL Open Font License (the licence file sits next to the fonts).
+
+## Design summary
+Quiet, light, precise. An off-white page, near-black text, one sans-serif with tight negative tracking on big headings, a monospace face for small labels, black and white pill buttons, and white cards outlined by 1px light-grey borders. Big headings sit top-left with plenty of space. Each section pairs a heading, one framed visual and a narrow column of facts. Colour is almost absent: the interest comes from type, alignment and generous space.
 
 ## Design tokens
 
-The authoritative palette, typography, spacing, shapes, and breakpoints are in [`tokens.md`](./tokens.md). CSS custom properties in `site/assets/site.css` must match them. Accents belong to abstract artwork and selected visual details; keep the content readable with the documented neutral text colors.
+### Colours (observed)
+| Role | Value |
+|------|-------|
+| Page background | #fafafa |
+| Card / raised surface | #ffffff |
+| Text, buttons | #171717 |
+| Secondary text | #4d4d4d |
+| Tertiary text (labels) | #737373 |
+| Border | #ebebeb |
+| Subtle fill | #f2f2f2 |
+| Focus ring | hsl(212 100% 48%) |
 
-## Typography
+### Typography (observed)
+- Geist Sans for everything; Geist Mono for small uppercase labels and the eyebrow pill.
+- H1 64px, weight 400, line-height 1.0, tracking -0.06em.
+- H2 56px, weight 450, line-height 1.0, tracking -0.06em.
+- Body 16px / 24px. Secondary paragraphs in #4d4d4d.
+- Nav and footer 14–16px, weight 400.
+- Phone: H1 and H2 come down to 32px.
 
-Use the self-hosted Geist family already in `site/assets/fonts/`. Heavy, tightly tracked uppercase display styling gives headings the poster-like character. Keep body copy at a comfortable reading size and preserve its wording and sentence case in the HTML. Use Geist Mono for labels, pills, and compact technical details.
+### Spacing and layout (observed)
+- Base unit 4px. Content width 1392px at a 1440px viewport (24px side margins).
+- Header 64px tall, sticky, page-coloured with a 1px bottom border.
+- Radius: 12px on cards and frames; buttons are full pills.
+- Shadows: none. Edges are 1px borders (a 1px ring on white buttons).
+- Sections separated by about 160–200px of space on desktop.
 
-## Components and page structure
+## Components
+- **Header:** mark at the left, 3–4 plain links, then a white pill and a black pill at the right. Phone: mark plus a menu icon.
+- **Buttons:** 40px tall pills, 12px side padding, weight 500. Primary black with white text; secondary white with a 1px #ebebeb ring.
+- **Eyebrow pill:** small monospace uppercase text in a white pill with a border, with a chevron.
+- **Hero:** heading and buttons on the left, a short list of product links on the right; a strip of facts below. There is no 3D object.
+- **Feature section:** big heading top-left; a framed card in the middle holding a product visual; on the right, one sentence (dark lead words, grey rest) and a "Features" list in small type.
+- **Bento grid:** cards with 1px borders on a white ground, each with a title, one line and a visual.
+- **Closing call to action:** centred heading, one black pill.
+- **Footer:** a full-width sitemap in 5–7 columns with small headings, then a bottom row with legal links.
+- **Consent:** keep the opt-in choices and privacy link accessible without obscuring content. On the home page, place the banner after the hero so it does not push the first screen down.
 
-- **Header:** compact sticky navigation on warm paper, fine rule, black wordmark, and one clear email action. Keep page destinations in the Products and Company menus instead of repeating them as header buttons. At phone widths, use the existing accessible menu and keep every page destination available.
-- **Hero:** very large headline and existing calls to action. CSS-only abstract shapes provide a lively backdrop without competing with the words. Keep the product links and facts visible.
-- **Product sections:** retain the approved section order and all existing copy. Give diagrams stronger editorial color-block composition, with their existing illustration captions.
-- **Recently shipped:** keep the existing approved cards, using fine dark outlines, geometric accents, and strong type hierarchy.
-- **Documents:** use the same paper background, display headings, fine rules, and body typography; prioritize legibility over decoration.
-- **Consent:** keep the existing opt-in choices and privacy link accessible and visible without obscuring page content.
-- **Footer:** preserve the existing sitemap and legal links.
-- **Facts row:** keep every approved fact visible without requiring horizontal scrolling on phones.
+## Page patterns
+Hero → facts strip → three feature sections → bento grid → centred call to action → sitemap footer. On phones everything stacks into one column: the heading is centred, buttons are full-width, then each feature section has a heading, visual, sentence and list.
 
-## Behavior and accessibility
+## Content style
+Short declarative headings (5–8 words), sentence case. CTAs are verbs ("Deploy now", "Talk to sales"). Each section's proof is a single concrete sentence.
 
-Keep semantic HTML, real links and buttons, visible keyboard focus, descriptive alt text where images exist, and reduced-motion support. CSS art is decorative and must not add accessible names or communicate product facts. The site remains plain HTML and CSS with its existing small scripts; add no dependencies, embeds, or tracking.
+## How Undeify uses it (agent build instructions)
+1. Tokens as above, as custom properties in `site/assets/site.css`. Fonts self-hosted.
+2. Our own mark (a black U) and wordmark. Never a triangle.
+3. Hero: our own headline and buttons, with product links on the right and no 3D object.
+4. The logo strip becomes a strip of true facts (we have no customer logos and won't fake them).
+5. Feature sections for NOW and ShiftOS. Their visuals are simple diagrams drawn in HTML and CSS, labelled as illustrations, until real screenshots exist. Feature lists only name things the products really do or plan.
+6. The bento grid holds how we work: security, Nigerian law, own products, size, plus the product in research.
+7. Closing call to action: email us. Footer: our sitemap and legal links.
+8. Reduced motion: disable non-essential animation. No JavaScript: everything still readable.
 
-## Responsive layout
-
-Support 390px, 768px, and 1440px viewports without horizontal page scrolling. Stack editorial layouts and diagrams at the documented phone breakpoint. Keep body text, controls, and navigation comfortably readable and operable.
+## Rerun inputs
+workflow: firecrawl-website-design-clone
+source_url: https://vercel.com
+target_stack: static HTML and CSS
+output: docs/DESIGN.md
