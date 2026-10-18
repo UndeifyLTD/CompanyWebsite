@@ -23,7 +23,7 @@ Geist Sans (variable, 100–900) for everything; Geist Mono for small uppercase 
 
 | Token | Size | Use |
 |-------|------|-----|
-| `--h1` | 40–64px, weight 400, tracking -0.06em | Hero headline |
+| `--h1` | 32–64px, weight 400, tracking -0.06em | Hero headline |
 | `--h2` | 32–56px, weight 450, tracking -0.06em | Section headings |
 | `--h3` | 24px, weight 500 | Card titles |
 | `--lead` | 20–24px | Claims and about text |
