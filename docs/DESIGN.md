@@ -40,21 +40,21 @@ Quiet, light, precise. An off-white page, near-black text, one sans-serif with t
 - Header 64px tall, sticky, page-coloured with a 1px bottom border.
 - Radius: 12px on cards and frames; buttons are full pills.
 - Shadows: none. Edges are 1px borders (a 1px ring on white buttons).
-- Sections separated by about 160–200px of space on desktop.
+- Sections separated by 128px on wide layouts, with the gaps tightening as sections stack.
 
 ## Components
 - **Header:** mark at the left, 3–4 plain links, then a white pill and a black pill at the right. Phone: mark plus a menu icon.
 - **Buttons:** 40px tall pills, 12px side padding, weight 500. Primary black with white text; secondary white with a 1px #ebebeb ring.
 - **Eyebrow pill:** small monospace uppercase text in a white pill with a border, with a chevron.
 - **Hero:** heading and buttons on the left, a short list of product links on the right; a strip of facts below. There is no 3D object.
-- **Feature section:** big heading top-left; a framed card in the middle holding a product visual; on the right, one sentence (dark lead words, grey rest) and a "Features" list in small type.
+- **Feature section:** big heading top-left; a framed card holding a product visual; on wide layouts, the alternating visual and supporting copy use balanced columns. At tablet widths they stack; the copy stays close to its visual.
 - **Bento grid:** cards with 1px borders on a white ground, each with a title, one line and a visual.
 - **Closing call to action:** centred heading, one black pill.
-- **Footer:** a full-width sitemap in 5–7 columns with small headings, then a bottom row with legal links.
+- **Footer:** a full-width sitemap that steps from six columns on wide layouts to four, three, then two as space narrows, followed by a bottom row with legal links.
 - **Consent:** keep the opt-in choices and privacy link accessible without obscuring content. On the home page, place the banner after the hero so it does not push the first screen down.
 
 ## Page patterns
-Hero → facts strip → three feature sections → bento grid → centred call to action → sitemap footer. On phones everything stacks into one column: the heading is centred, buttons are full-width, then each feature section has a heading, visual, sentence and list.
+Hero → facts strip → three feature sections → bento grid → centred call to action → sitemap footer. The home hero stays unchanged. At tablet widths, the lead shipped item spans the grid above the two smaller items; on phones the cards stack in one column. Document pages use a centered text column.
 
 ## Content style
 Short declarative headings (5–8 words), sentence case. CTAs are verbs ("Deploy now", "Talk to sales"). Each section's proof is a single concrete sentence.
