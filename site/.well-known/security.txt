@@ -1,5 +1,0 @@
-Contact: mailto:hello@undeify.com
-Expires: 2027-10-16T00:00:00.000Z
-Preferred-Languages: en
-Canonical: https://www.undeify.com/.well-known/security.txt
-Policy: https://www.undeify.com/security.html

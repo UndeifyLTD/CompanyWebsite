@@ -1,3 +1,4 @@
 .taste-skill/
 design/figma-screens*.html
 .firecrawl/
+node_modules/

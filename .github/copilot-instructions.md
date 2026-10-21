@@ -4,7 +4,7 @@ This repo is the Undeify company website. The design and content are decided by 
 
 ## Source of truth, in order
 
-1. `site/` — the built v1 site. Its copy and layout are approved content; change them only when asked.
+1. `site/src/` — the React source for the production website. `site/` also contains build output and static assets.
 2. `docs/decisions.md` — what is decided and why.
 3. `docs/tokens.md` — the only colours, fonts, sizes and spacing allowed.
 4. The Figma file linked in `docs/README.md` — visual reference for the spec. Where Figma and the spec disagree, stop and ask; do not pick one.
@@ -15,8 +15,10 @@ Only build pages and sections that have a status of **Approved** in `docs/decisi
 
 - Never write copy. No placeholder text, no "Lorem ipsum", no invented taglines, features, customers, testimonials, statistics, logos, prices or dates. If text you need is not already in `site/`, leave a visible `TODO(copy): <what is missing>` and say so.
 - Never add a colour, font, size, shadow, gradient or spacing value that is not in `docs/tokens.md`.
-- Never add a dependency, framework, build tool, analytics, tracking script, cookie or third-party embed. The site is plain HTML and CSS in `site/`, plus the one small script `site/assets/site.js`.
-- Never add a form that sends data anywhere. Contact is a `mailto:` link.
+- Do not introduce unapproved dependencies or tracking. The React runtime is self-hosted; JSX must be precompiled before deployment, with no runtime Babel or `unsafe-eval`.
+- Preserve opt-in Google Analytics consent and Vercel Web Analytics. Google Analytics must not load before explicit consent.
+- The contact form must remain disabled until its Formspree endpoint and privacy, retention and transfer safeguards are approved.
+- The Security page and `security.txt` are intentionally absent. Keep protective HTTP security headers and CSP restrictions.
 - Never write "Ltd", "Limited", an RC number or a registration number unless a founder supplies it.
 - Never put secrets, keys or tokens in the repo.
 
@@ -24,4 +26,6 @@ Only build pages and sections that have a status of **Approved** in `docs/decisi
 
 - Semantic HTML, real links and buttons, visible focus styles, alt text that describes the picture, and `prefers-reduced-motion` support.
 - Works at 390px, 768px and 1440px wide with no horizontal scroll.
+- Run `npm ci`, `npm run build` and local browser checks after changing app code.
+- Never deploy or push without explicit founder authorization.
 - When unsure, ask in the pull request instead of guessing.
