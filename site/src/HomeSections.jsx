@@ -1,5 +1,5 @@
-// Undeify UI kit — home page sections: hero, facts strip, feature, bento.
-const TYPED = ['for businesses in Nigeria.', 'for everyday people.', 'built by its founders.'];
+// Undeify UI kit — home page sections: hero, facts strip, feature, NOW beta waitlist.
+const TYPED = ['for teams that work in shifts.', 'for finding Lagos spots worth it.', 'made in Nigeria, by its founders.'];
 
 function TypedLine() {
   const [text, setText] = React.useState(TYPED[0]);
@@ -24,10 +24,10 @@ function Hero({ onNav }) {
       <div className="hero__body">
         <div className="hero__copy">
           <p className="recap"><a href={routeHref('about')} onClick={(e) => { e.preventDefault(); onNav('about'); }}>Built in Nigeria <Icon name="chevron-right" size={12} /></a></p>
-          <h1>Our Own Software</h1>
+          <h1>Software we build and stand behind</h1>
           <TypedLine />
           <div className="hero__actions">
-            <Button variant="dark" onClick={() => onNav('contact')}>Email us</Button>
+            <Button variant="dark" href={routeHref('home#beta')} onClick={(e) => { e.preventDefault(); onNav('home#beta'); }}>Join the NOW beta</Button>
             <Button variant="light" onClick={() => onNav('home#now')}>See products <Icon name="chevron-down" size={12} style={{ opacity: 0.7 }} /></Button>
           </div>
         </div>
@@ -37,7 +37,7 @@ function Hero({ onNav }) {
   );
 }
 
-function FactsStrip({ facts = [['NDPA 2023'], ['Lagos first'], ['2 founders', 1], ['Built in Nigeria']] }) {
+function FactsStrip({ facts = [['Our own products'], ['Lagos first'], ['2 founders', 1], ['Built in Nigeria']] }) {
   const renderFacts = (group) => facts.map(([f, m]) => <li key={`${group}-${f}`} className={m ? 'm' : ''}>{f}</li>);
 
   return (
@@ -60,7 +60,8 @@ function Eyebrow({ name, status, dot }) {
   return <p className="eyebrow" data-reveal><i className={`dot${dot ? ' dot--' + dot : ''}`}></i><b>{name}</b>{status && <span>· {status}</span>}</p>;
 }
 
-function Feature({ id, title, flip, eyebrow, media, stat, statRest, features, more, onMore }) {
+// moreTo: the route the "more" link points at (contact unless set)
+function Feature({ id, title, flip, eyebrow, media, stat, statRest, features, more, moreTo = 'contact', onMore }) {
   return (
     <section className={`feature${flip ? ' feature--flip' : ''}`} id={id}>
       {eyebrow && <Eyebrow {...eyebrow} />}
@@ -69,37 +70,40 @@ function Feature({ id, title, flip, eyebrow, media, stat, statRest, features, mo
       <div className="feature__aside" data-reveal style={{ '--d': '200ms' }}>
         <p className="stat"><strong>{stat}</strong> {statRest}</p>
         <ul className="flist"><li>Features</li>{features.map((f) => <li key={f}>{f}</li>)}</ul>
-        <TextLink href={routeHref('contact')} onClick={(e) => { e.preventDefault(); onMore && onMore(); }}>{more} <Icon name="chevron-right" size={12} /></TextLink>
+        <TextLink href={routeHref(moreTo)} onClick={(e) => { e.preventDefault(); onMore && onMore(); }}>{more} <Icon name="chevron-right" size={12} /></TextLink>
       </div>
     </section>
   );
 }
 
-function Tile({ title, desc, children, onClick, delay = 0 }) {
-  const Tag = onClick ? 'a' : 'article';
-  return (
-    <Tag className="tile" data-reveal style={{ '--d': delay + 'ms' }} href={onClick ? routeHref('about') : undefined} onClick={onClick ? (e) => { e.preventDefault(); onClick(); } : undefined}>
-      <div className="tile__art">{children}</div>
-      <div className="tile__head"><h3>{title}{onClick && <img className="tile__go" src="assets/icons/chevron-right.svg" alt="" />}</h3><p>{desc}</p></div>
-    </Tag>
-  );
-}
+// The NOW beta waitlist. No form: joining is an email to hello@undeify.com with the message
+// already written (decision W4). NOW is for adults only, so the email asks the visitor to
+// confirm they are 18 or over.
+const BETA_MAIL = mailtoHello('Join the NOW beta', 'Hi Undeify,\n\nPlease add me to the NOW beta waitlist.\n\nFirst name: \nI confirm I am 18 or over: yes\n');
 
-function Shipped({ onNav }) {
+function Waitlist({ onNav }) {
   return (
-    <section className="shipped wrap" id="shipped">
-      <p className="eyebrow" data-reveal><i className="dot"></i><b>Shipped</b></p>
-      <h2 data-reveal>Recently shipped</h2>
-      <div className="bento">
-        <Tile title="ShiftOS" desc="Scheduling and operations for teams that work in shifts. Running in production.">
-          <ul className="tile-list"><li>Shift scheduling and rotas</li><li>Attendance</li><li>Leave requests</li><li>Team roles</li></ul>
-        </Tile>
-        <Tile delay={80} title="This website" desc="A responsive company site with self-hosted type and accessible page navigation." onClick={() => onNav('about')}>
-          <div className="code-card"><b>type</b>: self-hosted<br /><b>pages</b>: home, about, privacy, terms<br /><b>contact</b>: hello@undeify.com</div>
-        </Tile>
+    <section className="waitlist wrap" id="beta">
+      <div className="waitlist__intro">
+        <p className="eyebrow" data-reveal><i className="dot dot--hollow"></i><b>NOW</b><span>· Private beta in Lagos</span></p>
+        <h2 data-reveal>Be first to see where Lagos actually goes</h2>
+        <p className="waitlist__lede" data-reveal>NOW opens to a small group of testers in Lagos first. Join the waitlist and we will email you once, when your invite is ready. No newsletter, no spam.</p>
+      </div>
+      <div className="email-card" data-reveal>
+        <p className="email-card__title">Join by email in three steps</p>
+        <ol className="steps">
+          <li>Tap the button below. Your email app opens with the message ready.</li>
+          <li>Add your first name and confirm you are 18 or over. NOW is for adults only.</li>
+          <li>Send it. We reply once, when your invite is ready.</li>
+        </ol>
+        <div className="email-card__actions">
+          <Button variant="dark" href={BETA_MAIL}>Email to join the beta</Button>
+          <CopyEmail />
+        </div>
+        <p className="email-card__note">We use your name and email only to invite you to the NOW beta. Read our <a href={routeHref('privacy')} onClick={(e) => { e.preventDefault(); onNav('privacy'); }}>Privacy notice</a>.</p>
       </div>
     </section>
   );
 }
 
-Object.assign(window, { Hero, TypedLine, FactsStrip, Eyebrow, Feature, Tile, Shipped });
+Object.assign(window, { Hero, TypedLine, FactsStrip, Eyebrow, Feature, Waitlist });

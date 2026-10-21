@@ -8,8 +8,8 @@ const ROUTE_PATHS = {
 
 const PAGE_META = {
   home: {
-    title: "Undeify: our own software, built in Nigeria",
-    description: "Undeify is a Nigerian software company. We design, build and run our own products, like ShiftOS and NOW, for businesses and everyday people in Nigeria.",
+    title: "Undeify: software we build and stand behind, made in Nigeria",
+    description: "Undeify is a Nigerian software company that builds and runs its own products: ShiftOS for teams that work in shifts, and NOW, a social map of Lagos places. Join the NOW beta.",
   },
   about: {
     title: "About Undeify",
@@ -44,17 +44,17 @@ function HomePage({ onNav }) {
     <main id="main">
       <Hero onNav={onNav} />
       <div className="features wrap">
-        <Feature id="now" eyebrow={{ name: "NOW", status: "In design · private beta", dot: "hollow" }} title="See where people in Lagos actually go" media={<NowIllustration />}
+        <Feature id="now" eyebrow={{ name: "NOW", status: "In development · private beta", dot: "hollow" }} title="See where people in Lagos actually go" media={<NowIllustration />}
           stat="NOW is a social map of places," statRest="starting with a private beta in Lagos."
           features={["Posts about places you have been", "Follow friends and see where they go", "Worth-it ratings from real visits", "A map that starts with Lagos"]}
-          more="Ask about the beta" onMore={() => onNav("contact")} />
+          more="Join the beta waitlist" moreTo="home#beta" onMore={() => onNav("home#beta")} />
         <Feature id="shiftos" flip eyebrow={{ name: "ShiftOS", status: "Running in production", dot: "live" }} title="Run every shift from one schedule" media={<ShiftIllustration />}
           stat="ShiftOS runs in production" statRest="for teams that work in shifts."
           features={["Shift scheduling and rotas", "Attendance", "Leave requests", "Roles for managers, supervisors and staff"]}
           more="Ask about ShiftOS" onMore={() => onNav("contact")} />
       </div>
-      <Shipped onNav={onNav} />
-      <Closing onNav={onNav} />
+      <Waitlist onNav={onNav} />
+      <Closing />
     </main>
   );
 }

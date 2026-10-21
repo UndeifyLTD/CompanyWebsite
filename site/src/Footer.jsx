@@ -6,7 +6,7 @@ function Footer({ onNav }) {
       <div className="wrap">
         <div className="footer__cols">
           <nav><h2>Products</h2><ul><li><a href={routeHref('home#now')} onClick={go('home#now')}>NOW</a></li><li><a href={routeHref('home#shiftos')} onClick={go('home#shiftos')}>ShiftOS</a></li><li><a href={routeHref('about')} onClick={go('about')}>In research</a></li></ul></nav>
-          <nav><h2>Company</h2><ul><li><a href={routeHref('about')} onClick={go('about')}>About</a></li><li><a href={routeHref('home#shipped')} onClick={go('home#shipped')}>Shipped</a></li><li><a href={routeHref('contact')} onClick={go('contact')}>Contact</a></li></ul></nav>
+          <nav><h2>Company</h2><ul><li><a href={routeHref('about')} onClick={go('about')}>About</a></li><li><a href={routeHref('home#beta')} onClick={go('home#beta')}>NOW beta</a></li><li><a href={routeHref('contact')} onClick={go('contact')}>Contact</a></li></ul></nav>
           <nav><h2>Legal</h2><ul><li><a href={routeHref('privacy')} onClick={go('privacy')}>Privacy notice</a></li><li><a href={routeHref('terms')} onClick={go('terms')}>Terms of use</a></li><li><button type="button" onClick={() => window.undeifyConsent.open(true)}>Cookie settings</button></li></ul></nav>
           <div><h2>Contact</h2><ul><li><a href="mailto:hello@undeify.com">hello@undeify.com</a></li></ul></div>
           <div><h2>Location</h2><ul><li><span>Nigeria</span></li></ul></div>
@@ -36,12 +36,15 @@ function CopyEmail({ email = 'hello@undeify.com' }) {
   );
 }
 
-function Closing({ title = 'Built in Nigeria, by its founders', onNav }) {
+// The one place on the home page that asks for an email: it opens the visitor's mail app
+// straight away, and says who answers and when.
+function Closing({ title = 'Built in Nigeria, by its founders' }) {
   return (
     <section className="closing wrap">
       <h2 data-reveal>{title}</h2>
+      <p className="closing__lede" data-reveal>Questions about NOW or ShiftOS? Write to us. A founder reads every email and replies within two working days.</p>
       <div className="closing__actions" data-reveal style={{ '--d': '120ms' }}>
-        <Button variant="dark" onClick={() => onNav('contact')}>Email us</Button>
+        <Button variant="dark" href="mailto:hello@undeify.com">Email a founder</Button>
         <CopyEmail />
       </div>
     </section>

@@ -89,7 +89,7 @@ h1, h2, h3 { text-wrap: balance; font-feature-settings: "ss01"; }
 .feature--flip .eyebrow { grid-column: 2; grid-row: 1; }
 .feature--flip h2 { grid-row: 2; }
 .feature--flip .feature__media, .feature--flip .feature__aside { grid-row: 3; }
-.feature h2, .shipped h2, .closing h2 { font-size: clamp(32px, 4.1cqi, 60px); line-height: 1.02; }
+.feature h2, .closing h2 { font-size: clamp(32px, 4.1cqi, 60px); line-height: 1.02; }
 .feature__media { margin-top: clamp(28px, 3.4cqi, 56px); }
 .feature__aside { margin-top: clamp(28px, 3.4cqi, 56px); max-width: 400px; }
 .feature--flip .feature__aside { justify-self: start; }
@@ -113,16 +113,6 @@ h1, h2, h3 { text-wrap: balance; font-feature-settings: "ss01"; }
 .rota > b { transition: transform 300ms var(--ease-out), background-color 300ms ease; }
 .rota > b:hover { transform: scale(1.06); }
 
-/* ---------- bento ---------- */
-.shipped { margin-top: clamp(112px, 12cqi, 192px); }
-.bento { margin-top: clamp(28px, 3.4cqi, 56px); gap: 16px; grid-template-rows: 296px 296px; }
-.tile { transition: background-color 300ms ease, box-shadow 300ms ease; }
-a.tile:hover { box-shadow: 0 0 0 1px #dedede; }
-.tile__head h3 { display: flex; align-items: center; gap: 8px; }
-.tile__go { width: 14px; height: 14px; opacity: 0; transform: translateX(-4px); transition: opacity 240ms ease, transform 300ms var(--ease-out); }
-a.tile:hover .tile__go { opacity: 1; transform: none; }
-.code-card { transition: transform 500ms var(--ease-out); }
-a.tile:hover .code-card { transform: translateY(-3px); }
 
 /* ---------- closing ---------- */
 .closing { margin-block: clamp(120px, 13cqi, 200px); gap: 28px; }
@@ -183,13 +173,11 @@ a.tile:hover .code-card { transform: translateY(-3px); }
   .hero__actions .btn { height: 44px; }
   .marks { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 0; margin: 40px 0 0; padding: 0; box-shadow: none; }
   .marks li, .marks li.m { padding: 14px 0; box-shadow: 0 -1px 0 var(--line); font-size: 12px; }
-  .feature h2, .shipped h2, .closing h2 { font-size: 34px; line-height: 38px; }
+  .feature h2, .closing h2 { font-size: 34px; line-height: 38px; }
   .eyebrow { margin-bottom: 14px; }
   .feature__aside, .feature--flip .feature__aside { margin-top: 28px; }
   .flist { margin-top: 24px; }
   .flist li + li { padding-block: 12px; }
-  .bento { gap: 12px; grid-template-rows: 425px 200px 200px; }
-  .tile__go { opacity: 1; transform: none; }
   .closing__actions { width: 100%; }
   .closing__actions .btn { width: 100%; height: 44px; }
   .footer { padding-block: 48px 32px; }
@@ -214,4 +202,58 @@ a.tile:hover .code-card { transform: translateY(-3px); }
 
 @container page (max-width: 720px) {
   .marks__group:first-child { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+
+/* Dropdowns also open on click or tap (Header.jsx NavDrop). */
+.nav__item.is-open .nav__link { color: var(--ink); background: var(--fill); }
+.nav__item.is-open .nav__link img { transform: rotate(180deg); }
+.nav__item.is-open .drop { opacity: 1; visibility: visible; transform: none; transition: opacity 180ms var(--ease-out), transform 220ms var(--ease-out); }
+/* A second click closes the menu even though the button keeps focus; touch screens don't
+   open it on a sticky hover. */
+.nav__item:focus-within:not(.is-open):not(:hover) .drop { opacity: 0; visibility: hidden; transform: translateY(-6px) scale(0.98); }
+@media (hover: none) {
+  .nav__item:hover:not(.is-open) .drop { opacity: 0; visibility: hidden; }
+}
+
+/* NOW beta waitlist (HomeSections.jsx Waitlist); the email card is shared with Contact. */
+.waitlist { margin-top: clamp(112px, 12cqi, 192px); display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: clamp(40px, 6cqi, 96px); align-items: start; }
+.waitlist h2 { margin-top: 16px; font-size: clamp(32px, 4.1cqi, 60px); line-height: 1.02; font-weight: 450; letter-spacing: -0.06em; text-wrap: balance; }
+.waitlist__lede { margin-top: 24px; max-width: 480px; font-size: 20px; line-height: 30px; letter-spacing: -0.02em; color: var(--ink-2); }
+
+/* Closing: one line on who answers and when. */
+.closing__lede { max-width: 520px; color: var(--ink-2); font-size: 18px; line-height: 28px; text-wrap: balance; }
+
+@container page (max-width: 720px) {
+  .waitlist { grid-template-columns: minmax(0, 1fr); }
+  .waitlist__lede { font-size: 18px; line-height: 28px; }
+}
+
+/* The facts strip needs space after each run, or the last fact of one run touches the first
+   fact of the next: `ul[class] { padding: 0 }` in site.css outranks `.marks__group`. */
+ul.marks__group { padding-right: 56px; }
+
+/* Email card: the site has no forms, so Contact and the waitlist end in one card of email
+   links (decision W4). */
+.email-card { display: grid; gap: 16px; align-content: start; padding: 24px; border-radius: 12px; background: var(--surface); box-shadow: 0 0 0 1px var(--line); }
+.email-card__title { font-size: 14px; line-height: 20px; font-weight: 500; }
+.email-card__actions { display: flex; flex-wrap: wrap; align-items: center; gap: 10px; }
+.email-card__note { color: var(--ink-2); font-size: 14px; line-height: 21px; }
+.email-card__note a { color: var(--ink); text-decoration: underline; text-decoration-color: var(--line); text-underline-offset: 4px; }
+ol.steps { margin: 0; padding-left: 20px; list-style: decimal; display: grid; gap: 10px; color: var(--ink-2); }
+.steps li::marker { color: var(--ink); font-family: var(--mono); font-size: 13px; }
+.topics { display: grid; }
+.topics a { display: grid; grid-template-columns: 1fr auto; gap: 2px 12px; align-items: center; padding: 12px 0; box-shadow: 0 -1px 0 var(--line); text-decoration: none; }
+.topics li:first-child a { box-shadow: none; padding-top: 0; }
+.topics b { font-weight: 500; }
+.topics span { grid-column: 1; color: var(--ink-2); font-size: 14px; line-height: 20px; }
+.topics img { grid-column: 2; grid-row: 1 / span 2; opacity: 0.5; transition: transform 200ms var(--ease-out), opacity 200ms ease; }
+@media (hover: hover) and (pointer: fine) {
+  .topics a:hover img { opacity: 1; transform: translateX(2px); }
+}
+/* .contact-page a would otherwise turn the dark button's label dark and underline it. */
+.email-card a.btn { text-decoration: none; }
+.email-card a.btn--dark { color: var(--surface); }
+@container page (max-width: 720px) {
+  .email-card { padding: 20px 16px; }
+  .email-card__actions .btn { width: 100%; height: 44px; }
 }

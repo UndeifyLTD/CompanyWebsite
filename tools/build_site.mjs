@@ -40,8 +40,8 @@ copyFileSync(resolve(root, "node_modules/react-dom/umd/react-dom.production.min.
 const pages = {
   "index.html": {
     canonical: "https://www.undeify.com/",
-    title: "Undeify: our own software, built in Nigeria",
-    description: "Undeify is a Nigerian software company. We design, build and run our own products, like ShiftOS and NOW, for businesses and everyday people in Nigeria.",
+    title: "Undeify: software we build and stand behind, made in Nigeria",
+    description: "Undeify is a Nigerian software company that builds and runs its own products: ShiftOS for teams that work in shifts, and NOW, a social map of Lagos places. Join the NOW beta.",
   },
   "about.html": {
     canonical: "https://www.undeify.com/about.html",

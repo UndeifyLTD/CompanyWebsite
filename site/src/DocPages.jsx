@@ -37,13 +37,13 @@ function AboutPage({ onNav }) {
       </ul>
       <h2>What we are building</h2>
       <ul>
-        <li><b>NOW</b>, a social map of places, starting with a private beta in Lagos. In design.</li>
+        <li><b>NOW</b>, a social map of places, starting with a private beta in Lagos. In development; <a href={routeHref('home#beta')} onClick={(e) => { e.preventDefault(); onNav('home#beta'); }}>join the beta waitlist</a>.</li>
         <li><b>ShiftOS</b>, scheduling and operations for teams that work in shifts. Running in production.</li>
       </ul>
       <h2>In research</h2>
       <p>We are researching an app for learning Yorùbá, made for families who live abroad, starting with parents who want to learn it themselves. It is on hold while NOW comes first, and we will build it only once people tell us they need it.</p>
       <h2>Contact</h2>
-      <p>Use our <a href={routeHref('contact')} onClick={openContact}>contact form</a>, or write to <Mail />. A founder replies within two working days.</p>
+      <p>Write to <Mail />, or see our <a href={routeHref('contact')} onClick={openContact}>contact page</a>. A founder replies within two working days.</p>
     </DocPage>
   );
 }
@@ -55,23 +55,24 @@ function PrivacyPage() {
       <h2>Who we are</h2>
       <p>Undeify is a software company in Nigeria. We are completing our registration with the Corporate Affairs Commission, and our registered name and number will be added here when it is done. For anything about your data, write to <Mail />.</p>
       <h2>What this website collects</h2>
-      <p>This website has no accounts or advertising. Its fonts, images, React runtime and page code are served from this site.</p>
+      <p>This website has no accounts, forms or advertising. Its fonts, images, React runtime and page code are served from this site.</p>
       <ul>
         <li><b>Visit counts, without cookies.</b> Vercel Web Analytics counts page views on visits. It records the page, referring site, country, and device, browser and operating system type. It sets no cookies and stores nothing on your device.</li>
         <li><b>Analytics, only if you agree.</b> If you choose Accept, Google Analytics counts visits and the pages read. Google receives standard request details, including your IP address and browser information. We have disabled Google advertising features.</li>
         <li><b>Server logs.</b> Our hosting provider receives the technical details needed to deliver the site and protect it, including your IP address, browser type and requested pages.</li>
         <li><b>Cookie choice.</b> Your browser stores whether you accepted or declined analytics in local storage so we can remember your choice. It is not sent to us.</li>
-        <li><b>Contact form.</b> The form is currently disabled because its Formspree endpoint has not been configured. Submitting it sends nothing. If you email us directly, we receive your email address, your name if you include it, and your message so we can reply.</li>
+        <li><b>Emails you send us.</b> When you write to hello@undeify.com, we receive your email address, your name if you include it, and your message, so we can reply.</li>
+        <li><b>NOW beta waitlist.</b> You join by email. We receive your first name, your email address and your confirmation that you are 18 or over. We use them only to invite you to the NOW beta and to check you are old enough to use it.</li>
       </ul>
       <h2 id="analytics">Cookies and analytics</h2>
       <p>On your first visit, we ask whether you allow Google Analytics. It does not load unless you choose Accept. If you decline, it does not load. If you later change your mind, use Cookie settings in the footer. When you withdraw consent after accepting, we tell Google Analytics to stop and delete its cookies from this browser where possible.</p>
       <p>If you accept, Google Analytics uses the <code>_ga</code> and <code>_ga_YMEL5ZY0SJ</code> cookies for up to 13 months. We have disabled Google signals and advertising personalisation. Vercel Web Analytics runs separately and does not use cookies.</p>
       <h2>Why we use this information</h2>
-      <p>We rely on our legitimate interests in operating this website, including cookie-free visit counts, and on your consent for Google Analytics. We use direct emails to respond and keep a record of the conversation. We never sell personal data or use it for advertising.</p>
+      <p>We rely on our legitimate interests in operating this website, including cookie-free visit counts, and on your consent for Google Analytics. We use direct emails to respond and keep a record of the conversation. We rely on your consent for the NOW waitlist, and you can withdraw it at any time by writing to us. We never sell personal data or use it for advertising.</p>
       <h2>How long we keep it</h2>
-      <p>Google keeps detailed analytics data for two months; after that, only totals remain. Hosting logs and visit counts are kept by Vercel for the period its service provides. We keep emails for as long as the conversation is active and for up to two years afterwards, unless the law requires us to keep them longer.</p>
+      <p>Google keeps detailed analytics data for two months; after that, only totals remain. Hosting logs and visit counts are kept by Vercel for the period its service provides. We keep emails for as long as the conversation is active and for up to two years afterwards, unless the law requires us to keep them longer. We keep NOW waitlist details until we have sent your beta invite, or for 12 months at most, and delete them sooner if you ask.</p>
       <h2>Where it is processed</h2>
-      <p>Google, Vercel and our email provider may process data outside Nigeria, including in the United States. Where that happens, we rely on the safeguards the Nigeria Data Protection Act 2023 allows for transfers abroad. The contact form will not send data to Formspree unless it is separately configured and its privacy, retention and transfer settings are reviewed.</p>
+      <p>Google, Vercel and our email provider, Zoho Mail, may process data outside Nigeria, including in the United States. Where that happens, we rely on the safeguards the Nigeria Data Protection Act 2023 allows for transfers abroad.</p>
       <h2>Your rights</h2>
       <p>Under the Nigeria Data Protection Act 2023 you can ask us to tell you what personal data we hold about you, to correct it, to delete it, to stop or limit how we use it, and to give you a copy. Write to <Mail subject="Data request" /> and we will answer within 30 days. If you are not satisfied with our answer, you can complain to the Nigeria Data Protection Commission.</p>
       <h2>Changes</h2>

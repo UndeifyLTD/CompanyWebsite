@@ -54,24 +54,6 @@
     banner = null;
   };
 
-  const placeBanner = () => {
-    if (!banner) return;
-    const main = document.querySelector("#root main");
-    if (!main) return;
-
-    const hero = main.querySelector(":scope > .hero");
-    if (hero && (banner.parentElement !== main || hero.nextElementSibling !== banner)) {
-      hero.after(banner);
-    } else if (!hero && (banner.parentElement !== main || main.lastElementChild !== banner)) {
-      main.append(banner);
-    }
-  };
-
-  const root = document.getElementById("root");
-  if (root) {
-    new MutationObserver(placeBanner).observe(root, { childList: true, subtree: true });
-  }
-
   const choose = (value) => {
     save(value);
     close();
@@ -88,20 +70,24 @@
 
   const open = (focus = false) => {
     if (banner?.isConnected) {
-      if (focus) {
-        banner.scrollIntoView({ block: "start" });
-        banner.querySelector("button")?.focus();
-      }
+      if (focus) banner.querySelector("button")?.focus();
       return;
     }
 
+    // A small card fixed to the lower-left corner: it never pushes the page down, and it stays
+    // until the visitor chooses.
     banner = document.createElement("section");
     banner.className = "consent";
-    banner.setAttribute("aria-label", "Cookie choice");
+    banner.setAttribute("aria-labelledby", "consent-title");
+
+    const title = document.createElement("p");
+    title.className = "consent__title";
+    title.id = "consent-title";
+    title.textContent = "Cookie preferences";
 
     const text = document.createElement("p");
     text.className = "consent__text";
-    text.append("May we use Google Analytics cookies to count visits and see which pages are read? We do not use them for advertising. ");
+    text.append("We use Google Analytics cookies to understand how visitors use this website so we can improve it. They are never used for advertising. You can change your choice at any time under Cookie settings. ");
     const privacy = document.createElement("a");
     privacy.className = "link";
     privacy.href = "/privacy.html#analytics";
@@ -121,15 +107,9 @@
       button.textContent = label;
       actions.append(button);
     }
-    banner.append(text, actions);
-
-    const root = document.getElementById("root");
-    if (root) placeBanner();
-    else document.body.append(banner);
-    if (focus) {
-      banner.scrollIntoView({ block: "start" });
-      banner.querySelector("button")?.focus();
-    }
+    banner.append(title, text, actions);
+    document.body.append(banner);
+    if (focus) banner.querySelector("button")?.focus();
   };
 
   document.addEventListener("click", (event) => {

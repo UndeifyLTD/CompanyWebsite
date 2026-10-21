@@ -1,5 +1,12 @@
-// Undeify UI kit — primitives: logo, buttons, icons.
+// Undeify UI kit — primitives: logo, buttons, icons, email links.
 const ICON_BASE = 'assets/icons/';
+
+// The site has no forms: every enquiry is an email to hello@undeify.com (decision W4).
+// mailtoHello('NOW') opens the visitor's email app with that subject (and body, if given).
+function mailtoHello(subject, body) {
+  const params = [subject && 'subject=' + encodeURIComponent(subject), body && 'body=' + encodeURIComponent(body)].filter(Boolean);
+  return 'mailto:hello@undeify.com' + (params.length ? '?' + params.join('&') : '');
+}
 
 function LogoMark({ size = 24 }) {
   return <img src="assets/logo-mark.svg" width={size} height={size} alt="" style={{ width: size, height: size }} />;
@@ -28,4 +35,4 @@ function TextLink({ children, href = '#', onClick }) {
   return <a className="flist__more" href={href} onClick={onClick}>{children}</a>;
 }
 
-Object.assign(window, { LogoMark, Brand, Icon, Button, TextLink });
+Object.assign(window, { LogoMark, Brand, Icon, Button, TextLink, mailtoHello });
