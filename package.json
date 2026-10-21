@@ -1,0 +1,17 @@
+{
+  "name": "undeify-company-website",
+  "private": true,
+  "version": "1.0.0",
+  "scripts": {
+    "build": "node tools/build_site.mjs",
+    "start": "python -m http.server 5174 --directory site"
+  },
+  "dependencies": {
+    "react": "18.3.1",
+    "react-dom": "18.3.1"
+  },
+  "devDependencies": {
+    "@babel/core": "7.29.7",
+    "@babel/preset-react": "7.28.5"
+  }
+}
