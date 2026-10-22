@@ -10,7 +10,7 @@ npm start
 
 Open `http://127.0.0.1:5174/`. This static preview does not run the Vercel API function; use Vercel's local development tooling for end-to-end form delivery. The production site remains unchanged until a separate deployment is authorized.
 
-React and the fonts are self-hosted. JSX is compiled during the build; visitors do not load Babel. Google Analytics loads only after consent. The contact form sends messages to hello@undeify.com through a same-origin Vercel function and Resend. The API sends nothing until configured.
+React and the fonts are self-hosted. JSX is compiled during the build; visitors do not load Babel. Google Analytics loads only after consent. The contact form sends messages to hello@undeify.com through the same-origin Vercel function in `site/api/contact.js` and Resend. The API sends nothing until configured.
 
 ## Contact form setup
 

@@ -1,6 +1,6 @@
 const assert = require('node:assert/strict');
 const { after, test } = require('node:test');
-const handler = require('../api/contact.js');
+const handler = require('../site/api/contact.js');
 
 const savedEnvironment = {
   CONTACT_FORM_ENABLED: process.env.CONTACT_FORM_ENABLED,
