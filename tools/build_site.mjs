@@ -16,6 +16,7 @@ const components = [
   "Header.jsx",
   "Footer.jsx",
   "DocPages.jsx",
+  "ContactDialog.jsx",
   "ContactPage.jsx",
   "App.jsx",
 ];

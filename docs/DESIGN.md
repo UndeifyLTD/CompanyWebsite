@@ -48,7 +48,7 @@ Quiet, light, precise. An off-white page, near-black text, one sans-serif with t
 - **Eyebrow pill:** small monospace uppercase text in a white pill with a border, with a chevron.
 - **Hero:** centered heading, buttons and "Built in Nigeria" pill in a compact first screen, followed by a close-set strip of facts. There is no 3D object or separate product-link list.
 - **Feature section:** big heading top-left; a framed card holding a product visual; on wide layouts, the alternating visual and supporting copy use balanced columns. At tablet widths they stack; the copy stays close to its visual.
-- **Waitlist and Contact:** heading and one paragraph on the left; a bordered email card on the right (steps or topics, an email button and copy-address); stacked on phones. No forms (W4).
+- **Waitlist and Contact:** heading and one paragraph on the left; a bordered email card on the right (steps or topics, an email button and copy-address); stacked on phones. Black email calls to action open the accessible contact form; white copy-address controls stay as-is (W4).
 - **Closing call to action:** centred heading, one black pill.
 - **Footer:** a full-width sitemap that steps from six columns on wide layouts to four, three, then two as space narrows, followed by a bottom row with legal links.
 - **Consent:** a small card fixed to the lower-left corner (W17), above the page and below the header and phone menu; full width with 12px margins on phones. It never pushes content down.

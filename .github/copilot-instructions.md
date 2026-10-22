@@ -17,7 +17,7 @@ Only build pages and sections that have a status of **Approved** in `docs/decisi
 - Never add a colour, font, size, shadow, gradient or spacing value that is not in `docs/tokens.md`.
 - Do not introduce unapproved dependencies or tracking. The React runtime is self-hosted; JSX must be precompiled before deployment, with no runtime Babel or `unsafe-eval`.
 - Preserve opt-in Google Analytics consent and Vercel Web Analytics. Google Analytics must not load before explicit consent.
-- The contact form must remain disabled until its Formspree endpoint and privacy, retention and transfer safeguards are approved.
+- Contact enquiries use the approved same-origin form and Resend backend. Keep sending fail-closed until `Resend_API_key` and a sender at a verified domain are configured in Vercel, transfer safeguards are reviewed, and a Vercel Firewall rate limit protects `POST /api/contact`. Never commit secrets. The form always sends only to `hello@undeify.com`; preserve the white copy-address controls.
 - The Security page and `security.txt` are intentionally absent. Keep protective HTTP security headers and CSP restrictions.
 - Never write "Ltd", "Limited", an RC number or a registration number unless a founder supplies it.
 - Never put secrets, keys or tokens in the repo.

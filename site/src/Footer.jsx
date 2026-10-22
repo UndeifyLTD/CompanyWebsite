@@ -36,15 +36,14 @@ function CopyEmail({ email = 'hello@undeify.com' }) {
   );
 }
 
-// The one place on the home page that asks for an email: it opens the visitor's mail app
-// straight away, and says who answers and when.
-function Closing({ title = 'Built in Nigeria, by its founders' }) {
+// The home page closing call to action opens the contact form and says who replies.
+function Closing({ title = 'Built in Nigeria, by its founders', onContact }) {
   return (
     <section className="closing wrap">
       <h2 data-reveal>{title}</h2>
       <p className="closing__lede" data-reveal>Questions about NOW or ShiftOS? Write to us. A founder reads every email and replies within two working days.</p>
       <div className="closing__actions" data-reveal style={{ '--d': '120ms' }}>
-        <Button variant="dark" href="mailto:hello@undeify.com">Email a founder</Button>
+        <Button variant="dark" onClick={() => onContact('Hello')}>Email a founder</Button>
         <CopyEmail />
       </div>
     </section>

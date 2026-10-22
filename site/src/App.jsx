@@ -39,7 +39,7 @@ function routeHref(to) {
 }
 window.routeHref = routeHref;
 
-function HomePage({ onNav }) {
+function HomePage({ onNav, onContact }) {
   return (
     <main id="main">
       <Hero onNav={onNav} />
@@ -53,8 +53,8 @@ function HomePage({ onNav }) {
           features={["Shift scheduling and rotas", "Attendance", "Leave requests", "Roles for managers, supervisors and staff"]}
           more="Ask about ShiftOS" onMore={() => onNav("contact")} />
       </div>
-      <Waitlist onNav={onNav} />
-      <Closing />
+      <Waitlist onNav={onNav} onContact={onContact} />
+      <Closing onContact={onContact} />
     </main>
   );
 }
@@ -63,6 +63,8 @@ function App() {
   const [route, setRoute] = React.useState(() => routeFromPath(window.location.pathname));
   const [hash, setHash] = React.useState(() => window.location.hash);
   const [menuOpen, setMenuOpen] = React.useState(false);
+  const [contactRequest, setContactRequest] = React.useState(null);
+  const contactSequence = React.useRef(0);
 
   React.useEffect(() => {
     const onPopState = () => {
@@ -110,7 +112,9 @@ function App() {
     setHash(nextHash);
     setMenuOpen(false);
   };
-
+  const openContact = (subject = 'Hello', purpose = 'contact') => {
+    setContactRequest({ subject, purpose, id: ++contactSequence.current });
+  };
   const Page = {
     about: AboutPage,
     privacy: PrivacyPage,
@@ -123,8 +127,9 @@ function App() {
     <div className="page">
       <a className="skip" href="#main">Skip to content</a>
       <Header onNav={onNav} menuOpen={menuOpen} setMenuOpen={setMenuOpen} />
-      <div className="route" key={route}>{Page ? <Page onNav={onNav} /> : <HomePage onNav={onNav} />}</div>
-      <Footer onNav={onNav} />
+      <div className="route" key={route}>{Page ? <Page onNav={onNav} onContact={openContact} /> : <HomePage onNav={onNav} onContact={openContact} />}</div>
+      <Footer onNav={onNav} onContact={openContact} />
+      <ContactDialog key={contactRequest ? contactRequest.id : 'closed'} request={contactRequest} onClose={() => setContactRequest(null)} />
     </div>
   );
 }

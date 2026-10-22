@@ -422,9 +422,9 @@ function Feature({
     size: 12
   }))));
 }
-const BETA_MAIL = mailtoHello('Join the NOW beta', 'Hi Undeify,\n\nPlease add me to the NOW beta waitlist.\n\nFirst name: \nI confirm I am 18 or over: yes\n');
 function Waitlist({
-  onNav
+  onNav,
+  onContact
 }) {
   return React.createElement("section", {
     className: "waitlist wrap",
@@ -446,16 +446,16 @@ function Waitlist({
     "data-reveal": true
   }, React.createElement("p", {
     className: "email-card__title"
-  }, "Join by email in three steps"), React.createElement("ol", {
+  }, "Join the beta waitlist"), React.createElement("ol", {
     className: "steps"
-  }, React.createElement("li", null, "Tap the button below. Your email app opens with the message ready."), React.createElement("li", null, "Add your first name and confirm you are 18 or over. NOW is for adults only."), React.createElement("li", null, "Send it. We reply once, when your invite is ready.")), React.createElement("div", {
+  }, React.createElement("li", null, "Enter your email address and a message."), React.createElement("li", null, "Confirm you are 18 or over. NOW is for adults only."), React.createElement("li", null, "We will email you when your invite is ready.")), React.createElement("div", {
     className: "email-card__actions"
   }, React.createElement(Button, {
     variant: "dark",
-    href: BETA_MAIL
+    onClick: () => onContact('Join the NOW beta', 'waitlist')
   }, "Email to join the beta"), React.createElement(CopyEmail, null)), React.createElement("p", {
     className: "email-card__note"
-  }, "We use your name and email only to invite you to the NOW beta. Read our ", React.createElement("a", {
+  }, "We use your details to manage your beta invitation. Read our ", React.createElement("a", {
     href: routeHref('privacy'),
     onClick: e => {
       e.preventDefault();
@@ -734,7 +734,8 @@ function CopyEmail({
   })));
 }
 function Closing({
-  title = 'Built in Nigeria, by its founders'
+  title = 'Built in Nigeria, by its founders',
+  onContact
 }) {
   return React.createElement("section", {
     className: "closing wrap"
@@ -751,7 +752,7 @@ function Closing({
     }
   }, React.createElement(Button, {
     variant: "dark",
-    href: "mailto:hello@undeify.com"
+    onClick: () => onContact('Hello')
   }, "Email a founder"), React.createElement(CopyEmail, null)));
 }
 Object.assign(window, {
@@ -830,10 +831,13 @@ function AboutPage({
 }
 function PrivacyPage() {
   return React.createElement(DocPage, {
-    title: "Privacy notice"
-  }, React.createElement("p", null, "This notice explains how Undeify handles personal data on this website, undeify.com. Each of our products has its own privacy notice, shown before that product collects anything."), React.createElement("h2", null, "Who we are"), React.createElement("p", null, "Undeify is a software company in Nigeria. We are completing our registration with the Corporate Affairs Commission, and our registered name and number will be added here when it is done. For anything about your data, write to ", React.createElement(Mail, null), "."), React.createElement("h2", null, "What this website collects"), React.createElement("p", null, "This website has no accounts, forms or advertising. Its fonts, images, React runtime and page code are served from this site."), React.createElement("ul", null, React.createElement("li", null, React.createElement("b", null, "Visit counts, without cookies."), " Vercel Web Analytics counts page views on visits. It records the page, referring site, country, and device, browser and operating system type. It sets no cookies and stores nothing on your device."), React.createElement("li", null, React.createElement("b", null, "Analytics, only if you agree."), " If you choose Accept, Google Analytics counts visits and the pages read. Google receives standard request details, including your IP address and browser information. We have disabled Google advertising features."), React.createElement("li", null, React.createElement("b", null, "Server logs."), " Our hosting provider receives the technical details needed to deliver the site and protect it, including your IP address, browser type and requested pages."), React.createElement("li", null, React.createElement("b", null, "Cookie choice."), " Your browser stores whether you accepted or declined analytics in local storage so we can remember your choice. It is not sent to us."), React.createElement("li", null, React.createElement("b", null, "Emails you send us."), " When you write to hello@undeify.com, we receive your email address, your name if you include it, and your message, so we can reply."), React.createElement("li", null, React.createElement("b", null, "NOW beta waitlist."), " You join by email. We receive your first name, your email address and your confirmation that you are 18 or over. We use them only to invite you to the NOW beta and to check you are old enough to use it.")), React.createElement("h2", {
+    title: "Privacy notice",
+    updated: "Last updated 22 October 2026"
+  }, React.createElement("p", null, "This notice explains how Undeify handles personal data on this website, undeify.com. Each of our products has its own privacy notice, shown before that product collects anything."), React.createElement("h2", null, "Who we are"), React.createElement("p", null, "Undeify is a software company in Nigeria. We are completing our registration with the Corporate Affairs Commission, and our registered name and number will be added here when it is done. For anything about your data, write to ", React.createElement(Mail, null), "."), React.createElement("h2", null, "What this website collects"), React.createElement("p", null, "This website has no accounts or advertising. Its fonts, images, React runtime and page code are served from this site."), React.createElement("ul", null, React.createElement("li", null, React.createElement("b", null, "Visit counts, without cookies."), " Vercel Web Analytics counts page views on visits. It records the page, referring site, country, and device, browser and operating system type. It sets no cookies and stores nothing on your device."), React.createElement("li", null, React.createElement("b", null, "Analytics, only if you agree."), " If you choose Accept, Google Analytics counts visits and the pages read. Google receives standard request details, including your IP address and browser information. We have disabled Google advertising features."), React.createElement("li", null, React.createElement("b", null, "Server logs."), " Our hosting provider receives the technical details needed to deliver the site and protect it, including your IP address, browser type and requested pages."), React.createElement("li", null, React.createElement("b", null, "Cookie choice."), " Your browser stores whether you accepted or declined analytics in local storage so we can remember your choice. It is not sent to us."), React.createElement("li", null, React.createElement("b", null, "Contact form messages."), " If you send us a message, we receive your email address, subject and message so we can respond. The form sends this information through Resend to our hello@undeify.com mailbox. Please do not include passwords, card details or other sensitive information."), React.createElement("li", null, React.createElement("b", null, "NOW beta waitlist."), " If you join the waitlist, we also receive your first name and confirmation that you are 18 or over. We use your details only to manage your beta invitation and check you are old enough to use NOW.")), React.createElement("h2", {
     id: "analytics"
-  }, "Cookies and analytics"), React.createElement("p", null, "On your first visit, we ask whether you allow Google Analytics. It does not load unless you choose Accept. If you decline, it does not load. If you later change your mind, use Cookie settings in the footer. When you withdraw consent after accepting, we tell Google Analytics to stop and delete its cookies from this browser where possible."), React.createElement("p", null, "If you accept, Google Analytics uses the ", React.createElement("code", null, "_ga"), " and ", React.createElement("code", null, "_ga_YMEL5ZY0SJ"), " cookies for up to 13 months. We have disabled Google signals and advertising personalisation. Vercel Web Analytics runs separately and does not use cookies."), React.createElement("h2", null, "Why we use this information"), React.createElement("p", null, "We rely on our legitimate interests in operating this website, including cookie-free visit counts, and on your consent for Google Analytics. We use direct emails to respond and keep a record of the conversation. We rely on your consent for the NOW waitlist, and you can withdraw it at any time by writing to us. We never sell personal data or use it for advertising."), React.createElement("h2", null, "How long we keep it"), React.createElement("p", null, "Google keeps detailed analytics data for two months; after that, only totals remain. Hosting logs and visit counts are kept by Vercel for the period its service provides. We keep emails for as long as the conversation is active and for up to two years afterwards, unless the law requires us to keep them longer. We keep NOW waitlist details until we have sent your beta invite, or for 12 months at most, and delete them sooner if you ask."), React.createElement("h2", null, "Where it is processed"), React.createElement("p", null, "Google, Vercel and our email provider, Zoho Mail, may process data outside Nigeria, including in the United States. Where that happens, we rely on the safeguards the Nigeria Data Protection Act 2023 allows for transfers abroad."), React.createElement("h2", null, "Your rights"), React.createElement("p", null, "Under the Nigeria Data Protection Act 2023 you can ask us to tell you what personal data we hold about you, to correct it, to delete it, to stop or limit how we use it, and to give you a copy. Write to ", React.createElement(Mail, {
+  }, "Cookies and analytics"), React.createElement("p", null, "On your first visit, we ask whether you allow Google Analytics. It does not load unless you choose Accept. If you decline, it does not load. If you later change your mind, use Cookie settings in the footer. When you withdraw consent after accepting, we tell Google Analytics to stop and delete its cookies from this browser where possible."), React.createElement("p", null, "If you accept, Google Analytics uses the ", React.createElement("code", null, "_ga"), " and ", React.createElement("code", null, "_ga_YMEL5ZY0SJ"), " cookies for up to 13 months. We have disabled Google signals and advertising personalisation. Vercel Web Analytics runs separately and does not use cookies."), React.createElement("h2", null, "Why we use this information"), React.createElement("p", null, "We rely on our legitimate interests in operating this website, including cookie-free visit counts, and on your consent for Google Analytics. We use contact form messages to respond and keep a record of the conversation. We rely on your consent for the NOW waitlist, and you can withdraw it at any time by writing to us. We never sell personal data or use it for advertising."), React.createElement("h2", null, "How long we keep it"), React.createElement("p", null, "Google keeps detailed analytics data for two months; after that, only totals remain. Hosting logs and visit counts are kept by Vercel for the period its service provides. We keep emails for as long as the conversation is active and for up to two years afterwards, unless the law requires us to keep them longer. We keep NOW waitlist details until we have sent your beta invite, or for 12 months at most, and delete them sooner if you ask."), React.createElement("h2", null, "Where it is processed"), React.createElement("p", null, "Google, Vercel, Resend and our email provider, Zoho Mail, may process data outside Nigeria, including in the United States. Where that happens, we rely on the safeguards the Nigeria Data Protection Act 2023 allows for transfers abroad. Resend processes contact form messages to deliver them to us; its ", React.createElement("a", {
+    href: "https://resend.com/legal/privacy-policy"
+  }, "privacy policy"), " describes its handling of service data."), React.createElement("h2", null, "Your rights"), React.createElement("p", null, "Under the Nigeria Data Protection Act 2023 you can ask us to tell you what personal data we hold about you, to correct it, to delete it, to stop or limit how we use it, and to give you a copy. Write to ", React.createElement(Mail, {
     subject: "Data request"
   }), " and we will answer within 30 days. If you are not satisfied with our answer, you can complain to the Nigeria Data Protection Commission."), React.createElement("h2", null, "Changes"), React.createElement("p", null, "If we change this notice, we will update the date at the top of this page."));
 }
@@ -852,9 +856,198 @@ Object.assign(window, {
 });
 })();
 (() => {
+function ContactDialog({
+  request,
+  onClose
+}) {
+  const dialogRef = React.useRef(null);
+  const [status, setStatus] = React.useState({
+    type: 'idle',
+    message: ''
+  });
+  const waitlist = request && request.purpose === 'waitlist';
+  React.useEffect(() => {
+    const dialog = dialogRef.current;
+    if (dialog && request && !dialog.open) {
+      dialog.showModal();
+      const firstField = dialog.querySelector('.contact-form__field input');
+      if (firstField) firstField.focus();
+    }
+    return () => {
+      if (dialog && dialog.open) dialog.close();
+    };
+  }, [request]);
+  if (!request) return null;
+  const submit = async event => {
+    event.preventDefault();
+    if (status.type === 'sending') return;
+    setStatus({
+      type: 'sending',
+      message: 'Sending your message…'
+    });
+    const form = event.currentTarget;
+    const data = new FormData(form);
+    const payload = {
+      email: data.get('email'),
+      subject: data.get('subject'),
+      message: data.get('message'),
+      name: data.get('name') || '',
+      purpose: waitlist ? 'waitlist' : 'contact',
+      adultConfirmed: data.get('adultConfirmed') === 'on',
+      website: data.get('website') || ''
+    };
+    try {
+      const response = await fetch('/api/contact', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(payload)
+      });
+      const result = await response.json().catch(() => ({}));
+      if (!response.ok) throw new Error(result.error || 'Your message could not be sent.');
+      setStatus({
+        type: 'success',
+        message: 'Your message has been sent. A founder will reply within two working days.'
+      });
+      form.reset();
+    } catch (error) {
+      setStatus({
+        type: 'error',
+        message: error.message || 'We could not send your message. Please email hello@undeify.com instead.'
+      });
+    }
+  };
+  return React.createElement("dialog", {
+    className: "contact-dialog",
+    ref: dialogRef,
+    "aria-labelledby": "contact-dialog-title",
+    "aria-describedby": "contact-dialog-description",
+    onKeyDown: event => {
+      if (event.key === 'Escape') {
+        event.preventDefault();
+        dialogRef.current.close();
+      }
+    },
+    onCancel: event => {
+      event.preventDefault();
+      dialogRef.current.close();
+    },
+    onClose: onClose
+  }, React.createElement("div", {
+    className: "contact-dialog__header"
+  }, React.createElement("div", null, React.createElement("h2", {
+    id: "contact-dialog-title"
+  }, waitlist ? 'Join the NOW beta' : 'Send a message'), React.createElement("p", {
+    id: "contact-dialog-description"
+  }, "A founder reads every message and replies within two working days.")), React.createElement("button", {
+    className: "contact-dialog__close",
+    type: "button",
+    onClick: () => dialogRef.current.close(),
+    "aria-label": "Close contact form"
+  }, "Close")), status.type === 'success' ? React.createElement("div", {
+    className: "contact-dialog__result",
+    role: "status"
+  }, React.createElement("p", null, status.message), React.createElement("button", {
+    className: "btn btn--dark",
+    type: "button",
+    onClick: () => dialogRef.current.close()
+  }, "Close")) : React.createElement("form", {
+    className: "contact-form",
+    onSubmit: submit
+  }, waitlist && React.createElement("div", {
+    className: "contact-form__field"
+  }, React.createElement("label", {
+    htmlFor: "contact-name"
+  }, "First name"), React.createElement("input", {
+    id: "contact-name",
+    name: "name",
+    type: "text",
+    autoComplete: "given-name",
+    maxLength: "100",
+    autoFocus: true,
+    required: true
+  })), React.createElement("div", {
+    className: "contact-form__field"
+  }, React.createElement("label", {
+    htmlFor: "contact-email"
+  }, "Your email"), React.createElement("input", {
+    id: "contact-email",
+    name: "email",
+    type: "email",
+    autoComplete: "email",
+    maxLength: "254",
+    autoFocus: !waitlist,
+    required: true
+  })), React.createElement("div", {
+    className: "contact-form__field"
+  }, React.createElement("label", {
+    htmlFor: "contact-subject"
+  }, "Subject"), React.createElement("input", {
+    id: "contact-subject",
+    name: "subject",
+    type: "text",
+    maxLength: "160",
+    defaultValue: request.subject,
+    required: true
+  })), React.createElement("div", {
+    className: "contact-form__field"
+  }, React.createElement("label", {
+    htmlFor: "contact-message"
+  }, "Message"), React.createElement("textarea", {
+    id: "contact-message",
+    name: "message",
+    rows: "6",
+    maxLength: "5000",
+    required: true
+  })), waitlist && React.createElement("label", {
+    className: "contact-form__consent"
+  }, React.createElement("input", {
+    type: "checkbox",
+    name: "adultConfirmed",
+    required: true
+  }), React.createElement("span", null, "I agree to use my details to manage my NOW beta invitation, and I confirm I am 18 or over.")), React.createElement("div", {
+    className: "contact-form__trap",
+    "aria-hidden": "true"
+  }, React.createElement("label", {
+    htmlFor: "contact-website"
+  }, "Leave this field empty"), React.createElement("input", {
+    id: "contact-website",
+    name: "website",
+    type: "text",
+    tabIndex: "-1",
+    autoComplete: "off"
+  })), React.createElement("p", {
+    className: "contact-form__privacy"
+  }, "Please do not include passwords, card details or other sensitive information. Read our ", React.createElement("a", {
+    href: routeHref('privacy')
+  }, "Privacy notice"), "."), React.createElement("div", {
+    className: "contact-form__actions"
+  }, React.createElement("button", {
+    className: "btn btn--dark",
+    type: "submit",
+    disabled: status.type === 'sending'
+  }, status.type === 'sending' ? 'Sending…' : 'Send message'), React.createElement("button", {
+    className: "btn btn--light",
+    type: "button",
+    onClick: () => dialogRef.current.close()
+  }, "Cancel")), status.message && React.createElement("p", {
+    className: `contact-form__status contact-form__status--${status.type}`,
+    role: status.type === 'error' ? 'alert' : 'status',
+    "aria-live": "polite"
+  }, status.message, status.type === 'error' && React.createElement(React.Fragment, null, " ", React.createElement("a", {
+    href: mailtoHello()
+  }, "Email hello@undeify.com instead.")))));
+}
+Object.assign(window, {
+  ContactDialog
+});
+})();
+(() => {
 const CONTACT_TOPICS = [['NOW', 'The beta, a place listing or a problem with the app', 'NOW'], ['ShiftOS', 'A demo, or a question about rotas, attendance and leave', 'ShiftOS'], ['Your data', 'A request about personal data we hold about you', 'Data request'], ['Anything else', 'Partnerships, press or a general question', 'Hello']];
 function ContactPage({
-  onNav
+  onNav,
+  onContact
 }) {
   return React.createElement("main", {
     className: "contact-page wrap",
@@ -877,12 +1070,13 @@ function ContactPage({
     className: "email-card"
   }, React.createElement("p", {
     className: "email-card__title"
-  }, "Choose a topic to start your email"), React.createElement("ul", {
+  }, "Choose a topic for your message"), React.createElement("ul", {
     className: "topics"
   }, CONTACT_TOPICS.map(([title, desc, subject]) => React.createElement("li", {
     key: title
-  }, React.createElement("a", {
-    href: mailtoHello(subject)
+  }, React.createElement("button", {
+    type: "button",
+    onClick: () => onContact(subject)
   }, React.createElement("b", null, title), React.createElement("span", null, desc), React.createElement(Icon, {
     name: "chevron-right",
     size: 12
@@ -890,7 +1084,7 @@ function ContactPage({
     className: "email-card__actions"
   }, React.createElement(Button, {
     variant: "dark",
-    href: mailtoHello()
+    onClick: () => onContact('Hello')
   }, "Email hello@undeify.com"), React.createElement(CopyEmail, null))));
 }
 Object.assign(window, {
@@ -936,7 +1130,8 @@ function routeHref(to) {
 }
 window.routeHref = routeHref;
 function HomePage({
-  onNav
+  onNav,
+  onContact
 }) {
   return React.createElement("main", {
     id: "main"
@@ -975,13 +1170,18 @@ function HomePage({
     more: "Ask about ShiftOS",
     onMore: () => onNav("contact")
   })), React.createElement(Waitlist, {
-    onNav: onNav
-  }), React.createElement(Closing, null));
+    onNav: onNav,
+    onContact: onContact
+  }), React.createElement(Closing, {
+    onContact: onContact
+  }));
 }
 function App() {
   const [route, setRoute] = React.useState(() => routeFromPath(window.location.pathname));
   const [hash, setHash] = React.useState(() => window.location.hash);
   const [menuOpen, setMenuOpen] = React.useState(false);
+  const [contactRequest, setContactRequest] = React.useState(null);
+  const contactSequence = React.useRef(0);
   React.useEffect(() => {
     const onPopState = () => {
       setRoute(routeFromPath(window.location.pathname));
@@ -1031,6 +1231,13 @@ function App() {
     setHash(nextHash);
     setMenuOpen(false);
   };
+  const openContact = (subject = 'Hello', purpose = 'contact') => {
+    setContactRequest({
+      subject,
+      purpose,
+      id: ++contactSequence.current
+    });
+  };
   const Page = {
     about: AboutPage,
     privacy: PrivacyPage,
@@ -1051,11 +1258,18 @@ function App() {
     className: "route",
     key: route
   }, Page ? React.createElement(Page, {
-    onNav: onNav
+    onNav: onNav,
+    onContact: openContact
   }) : React.createElement(HomePage, {
-    onNav: onNav
+    onNav: onNav,
+    onContact: openContact
   })), React.createElement(Footer, {
-    onNav: onNav
+    onNav: onNav,
+    onContact: openContact
+  }), React.createElement(ContactDialog, {
+    key: contactRequest ? contactRequest.id : 'closed',
+    request: contactRequest,
+    onClose: () => setContactRequest(null)
   }));
 }
 ReactDOM.createRoot(document.getElementById("root")).render(React.createElement(App, null));

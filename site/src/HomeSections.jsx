@@ -76,12 +76,7 @@ function Feature({ id, title, flip, eyebrow, media, stat, statRest, features, mo
   );
 }
 
-// The NOW beta waitlist. No form: joining is an email to hello@undeify.com with the message
-// already written (decision W4). NOW is for adults only, so the email asks the visitor to
-// confirm they are 18 or over.
-const BETA_MAIL = mailtoHello('Join the NOW beta', 'Hi Undeify,\n\nPlease add me to the NOW beta waitlist.\n\nFirst name: \nI confirm I am 18 or over: yes\n');
-
-function Waitlist({ onNav }) {
+function Waitlist({ onNav, onContact }) {
   return (
     <section className="waitlist wrap" id="beta">
       <div className="waitlist__intro">
@@ -90,17 +85,17 @@ function Waitlist({ onNav }) {
         <p className="waitlist__lede" data-reveal>NOW opens to a small group of testers in Lagos first. Join the waitlist and we will email you once, when your invite is ready. No newsletter, no spam.</p>
       </div>
       <div className="email-card" data-reveal>
-        <p className="email-card__title">Join by email in three steps</p>
+        <p className="email-card__title">Join the beta waitlist</p>
         <ol className="steps">
-          <li>Tap the button below. Your email app opens with the message ready.</li>
-          <li>Add your first name and confirm you are 18 or over. NOW is for adults only.</li>
-          <li>Send it. We reply once, when your invite is ready.</li>
+          <li>Enter your email address and a message.</li>
+          <li>Confirm you are 18 or over. NOW is for adults only.</li>
+          <li>We will email you when your invite is ready.</li>
         </ol>
         <div className="email-card__actions">
-          <Button variant="dark" href={BETA_MAIL}>Email to join the beta</Button>
+          <Button variant="dark" onClick={() => onContact('Join the NOW beta', 'waitlist')}>Email to join the beta</Button>
           <CopyEmail />
         </div>
-        <p className="email-card__note">We use your name and email only to invite you to the NOW beta. Read our <a href={routeHref('privacy')} onClick={(e) => { e.preventDefault(); onNav('privacy'); }}>Privacy notice</a>.</p>
+        <p className="email-card__note">We use your details to manage your beta invitation. Read our <a href={routeHref('privacy')} onClick={(e) => { e.preventDefault(); onNav('privacy'); }}>Privacy notice</a>.</p>
       </div>
     </section>
   );

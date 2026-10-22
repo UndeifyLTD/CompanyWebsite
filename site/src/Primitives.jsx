@@ -1,8 +1,7 @@
-// Undeify UI kit — primitives: logo, buttons, icons, email links.
+// Undeify UI kit — primitives: logo, buttons, icons, and email links.
 const ICON_BASE = 'assets/icons/';
 
-// The site has no forms: every enquiry is an email to hello@undeify.com (decision W4).
-// mailtoHello('NOW') opens the visitor's email app with that subject (and body, if given).
+// Keep a direct email fallback for links outside the contact form.
 function mailtoHello(subject, body) {
   const params = [subject && 'subject=' + encodeURIComponent(subject), body && 'body=' + encodeURIComponent(body)].filter(Boolean);
   return 'mailto:hello@undeify.com' + (params.length ? '?' + params.join('&') : '');

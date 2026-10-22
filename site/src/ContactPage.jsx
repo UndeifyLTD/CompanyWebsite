@@ -1,5 +1,4 @@
-// Contact page. No form: people write to hello@undeify.com directly (decision W4). Each topic
-// opens the visitor's email app with a subject line already filled in.
+// Contact page. Topic choices prefill the subject in the contact form.
 const CONTACT_TOPICS = [
   ['NOW', 'The beta, a place listing or a problem with the app', 'NOW'],
   ['ShiftOS', 'A demo, or a question about rotas, attendance and leave', 'ShiftOS'],
@@ -7,7 +6,7 @@ const CONTACT_TOPICS = [
   ['Anything else', 'Partnerships, press or a general question', 'Hello'],
 ];
 
-function ContactPage({ onNav }) {
+function ContactPage({ onNav, onContact }) {
   return (
     <main className="contact-page wrap" id="main">
       <div className="contact-page__intro">
@@ -16,14 +15,14 @@ function ContactPage({ onNav }) {
         <p className="contact-page__fallback">Please do not send passwords, card details or other sensitive information by email. Read our <a href={routeHref('privacy')} onClick={(e) => { e.preventDefault(); onNav('privacy'); }}>Privacy notice</a>.</p>
       </div>
       <div className="email-card">
-        <p className="email-card__title">Choose a topic to start your email</p>
+        <p className="email-card__title">Choose a topic for your message</p>
         <ul className="topics">
           {CONTACT_TOPICS.map(([title, desc, subject]) => (
-            <li key={title}><a href={mailtoHello(subject)}><b>{title}</b><span>{desc}</span><Icon name="chevron-right" size={12} /></a></li>
+            <li key={title}><button type="button" onClick={() => onContact(subject)}><b>{title}</b><span>{desc}</span><Icon name="chevron-right" size={12} /></button></li>
           ))}
         </ul>
         <div className="email-card__actions">
-          <Button variant="dark" href={mailtoHello()}>Email hello@undeify.com</Button>
+          <Button variant="dark" onClick={() => onContact('Hello')}>Email hello@undeify.com</Button>
           <CopyEmail />
         </div>
       </div>
