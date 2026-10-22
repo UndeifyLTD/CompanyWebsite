@@ -19,4 +19,4 @@ Install dependencies with `npm ci`, then run `npm run build`. Start a local serv
 
 ## Deploy
 
-The website is currently configured for Vercel with `site/` as the output directory. Do not deploy this replacement until it has been tested locally and Isaac separately authorizes deployment.
+The website is configured for Vercel with `site/` as the output directory. The founder authorized deployment of the contact-form update on 2026-10-22. The form API stays fail-closed until its Resend sender is verified, transfer safeguards are reviewed, and a rate limit is active. Set `CONTACT_FORM_ENABLED=true` only after those requirements are met.
